@@ -84,7 +84,7 @@ understand why they all have the same fundamental difficulty**!
 
 ![](14-np-completeness_0.png)
 
-::: {.fragment style="font-size: 0.85em;"}
+::: {.fragment style="margin-top: -0.25em; font-size: 0.85em;"}
 
 - **P**: Decision problems solvable in polynomial time
 - **NP**: Decision problems with polytime verification (= NPoly)
@@ -156,7 +156,11 @@ easy to verify.
 
 - **One understanding**: If P = NP, the classes are identical
 - **Alternative view**: If P $\neq$ NP, there's a "gap" between them
-- **Question key**: We don't know which diagram is correct!
+- **Key insight**: We don't know which view is correct!
+- **Reminders about this definition**:
+  - Focus is on complexity classes of decision problems
+  - P: problems solvable in polynomial time
+  - NP: problems verifiable in polynomial time
 
 :::
 
@@ -170,6 +174,7 @@ easy to verify.
 - **Scenario 2**: P $\neq$ NP is widely believed
 - **Importance**: This affects cryptography, optimization, and much more
 - **Deep insight**: Verification might be fundamentally easier than solving
+- **Don't forget the "middle group" from the prior diagram!**
 
 :::
 
@@ -190,7 +195,7 @@ beats sequential search
 
 :::
 
-::: {.fragment .fade style="font-size: 0.8em;"}
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.8em;"}
 
 **Nondeterminism captures parallel search**: nondeterministic programs can
 explore all possibilities simultaneously. The question is whether this
@@ -242,7 +247,7 @@ speedup
 
 :::
 
-# We know many polyequivalent problems!
+# There are many polyequivalent problems!
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
 
@@ -667,7 +672,7 @@ solving. Most cryptography depends on this asymmetry!
 
 :::
 
-# NP-completeness is widespread!
+# NP-completeness is very widespread!
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
 
