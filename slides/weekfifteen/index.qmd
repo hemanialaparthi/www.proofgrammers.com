@@ -148,7 +148,7 @@ easy to verify.
 
 :::
 
-## Try to grasp P versus NP debate
+## Try to grasp "P versus NP" debate
 
 ![](14-np-completeness_2.png)
 
@@ -158,7 +158,7 @@ easy to verify.
 - **Alternative view**: If P $\neq$ NP, there's a "gap" between them
 - **Key insight**: We don't know which view is correct!
 - **Reminders about this definition**:
-  - Focus is on complexity classes of decision problems
+  - Focus is on complexity class of decision problems
   - P: problems solvable in polynomial time
   - NP: problems verifiable in polynomial time
 
@@ -715,16 +715,16 @@ as NP-complete
 NP-complete, starting point for all others
 - {{< iconify fa6-solid check-circle >}} **Widespread**: Thousands of
 NP-complete problems across all fields
-- {{< iconify fa6-solid check-circle >}} **Proof technique**: Show in NP,
-then polyreduce from known NP-complete problem
+- {{< iconify fa6-solid check-circle >}} **Proof technique**: Show NP,
+then polyreduce from NP-complete problem
 - {{< iconify fa6-solid check-circle >}} **Practical impact**: Guides
 algorithm design and cryptography
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+::: {.fragment .fade style="font-size: 0.8em;"}
 
-**NP-completeness is the crown jewel of complexity theory**: it shows that
+**NP-completeness is the "crown jewel" of complexity theory**: it shows that
 thousands of diverse problems all have the same fundamental difficulty. As
 proofgrammers, understanding NP-completeness helps us recognize intractable
 problems and guides us toward practical solutions!
