@@ -251,10 +251,11 @@ packing, hard to find one
 
 ::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
 
-**Quick PolyCheck reminder**: A problem is in PolyCheck if we can verify a
-proposed solution in polynomial time, even if finding that solution might be
-hard. PACKING fits perfectly: given a subset, we just sum the weights and check
-if $L \leq \text{sum} \leq H$ in $O(n)$ time!
+{{< iconify fa6-solid rocket >}} **Quick PolyCheck reminder**: A problem is in
+PolyCheck if we can verify a proposed solution in polynomial time, even if
+finding that solution might be hard. PACKING fits perfectly: given a subset, we
+just sum the weights and check if $L \leq \text{sum} \leq H$ in $O(n)$
+time! **Does does it connect to PARTITION**?
 
 :::
 
@@ -298,14 +299,14 @@ to confirm the three key conditions as we go**!
 
 :::
 
-# Compare Turing and poly reductions
+# Compare Turing and polyreductions
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
 - {{< iconify fa6-solid code-branch >}} **Turing reductions**: Multiple calls
 to $G$, adaptive, no time bound
-- {{< iconify fa6-solid map-marked >}} **Polyreductions**: Single
-transformation from $F$ to $G$, polynomial time
+- {{< iconify fa6-solid map-location-dot >}} **Polyreductions**: 
+Transformation from $F$ to $G$, polynomial time
 - {{< iconify fa6-solid lightbulb >}} **Trade-off**: Flexibility vs stronger
 guarantees
 - {{< iconify fa6-solid trophy >}} **Power comparison**: Polyreductions reveal
@@ -319,7 +320,8 @@ the right tool
 
 {{< iconify fa6-solid gears >}} **Restrictions create power**: by limiting to
 polynomial time and single transformations, polyreductions give us exactly what
-we need for NP-completeness theory!
+we need for NP-completeness theory! We will soon explore the definition of
+NP-completeness using these tools!
 
 :::
 
