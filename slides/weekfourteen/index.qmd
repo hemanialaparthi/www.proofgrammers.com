@@ -231,6 +231,50 @@ must verify all three conditions in every proof!
 
 :::
 
+## Recall: PACKING problem
+
+::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
+
+- {{< iconify fa6-solid box >}} **Input**: Weights $w_1, w_2, \ldots, w_m$ and
+thresholds $L$ (low) and $H$ (high)
+- {{< iconify fa6-solid truck >}} **Metaphor**: Load packages into delivery
+truck with weight limits
+- {{< iconify fa6-solid question >}} **Question**: Can we select subset with
+total weight between $L$ and $H$?
+- {{< iconify fa6-solid check >}} **Example**: Weights "12 4 6 24 4 16; 20;
+27" → solution "4 6 16" (total = 26)
+- {{< iconify fa6-solid star >}} **In PolyCheck**: Easy to verify a proposed
+packing, hard to find one
+
+:::
+
+## Recall: PARTITION problem
+
+::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
+
+- {{< iconify fa6-solid box >}} **Input**: Just weights $w_1, w_2, \ldots,
+w_m$ (no thresholds!)
+- {{< iconify fa6-solid rocket >}} **Goal**: Split into two equal-weight
+subsets
+- {{< iconify fa6-solid question >}} **Question**: Can we partition weights so
+each half has same total?
+- {{< iconify fa6-solid check >}} **Example**: Weights "12 4 6 14 4 16" →
+solution "12 16" (total = 28) vs "4 6 14 4" (total = 28). Can you explain this
+example in detail?
+- {{< iconify fa6-solid link >}} **Relationship**: PARTITION is PACKING where
+$L = H = \frac{\text{total weight}}{2}$
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Both problems are in PolyCheck**: checking a proposed solution is easy (just
+sum the weights), but finding a solution seems hard. This makes them perfect
+examples for polyreductions! Let's polyreduce PARTITION to PACKING. **Make sure
+to confirm the three key conditions as we go**!
+
+:::
+
 ## Polyreduce PARTITION to PACKING
 
 ![](13-polyreductions_3.png)
