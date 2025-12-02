@@ -44,11 +44,11 @@ of both correct and efficient real-world Python programs.
 
 ::: {.incremental style="margin-top: -0.25em; font-size: 0.85em;"}
 
-- {{< iconify fa6-solid check-circle >}} **Poly**: Problems solvable in
+- {{< iconify fa6-solid circle-check >}} **Poly**: Problems solvable in
 polynomial time $O(n^k)$
-- {{< iconify fa6-solid check-circle >}} **PolyCheck/NPoly**: Problems
+- {{< iconify fa6-solid circle-check >}} **PolyCheck/NPoly**: Problems
 with polytime verification
-- {{< iconify fa6-solid check-circle >}} **Equivalence**: PolyCheck =
+- {{< iconify fa6-solid circle-check >}} **Equivalence**: PolyCheck =
 NPoly (proven!)
 - {{< iconify fa6-solid question >}} **Open question**: Is Poly $\subset$
 PolyCheck/NPoly?
@@ -61,8 +61,8 @@ problem difficulty?
 
 **Polyreductions provide comparison tools**: we need formal techniques to
 prove that one problem is "as hard as" another. This chapter introduces
-polynomial-time mapping reductions that let proofgrammers establish
-relationships between computational problems! Let's dive in!
+**polynomial-time mapping reductions** that let proofgrammers establish
+relationships between computational problems! **Let's dive in**!
 
 :::
 
