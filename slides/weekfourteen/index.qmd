@@ -150,7 +150,6 @@ creating the tree of uncomputable problems through a proof-by-contradiction
 technique. **Now, we define a new reduction to help with computational
 complexity**!
 
-
 :::
 
 ## Polynomial-time mapping reductions
