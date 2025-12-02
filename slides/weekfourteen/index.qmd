@@ -496,7 +496,7 @@ Edge $v \to w$ becomes $v_c$-$w_a$
 visit each triplet as $a \to b \to c$
 - {{< iconify fa6-solid check >}} **Example**: Directed cycle $v_4 \to v_1$
 becomes undirected $v_{4a} \to v_{4b} \to v_{4c} \to v_{1a} \to v_{1b} \to
-v_{1c}$
+v_{1c}$. See how this forces directionality?
 
 :::
 
@@ -571,11 +571,15 @@ start with some circuits!
 
 ![](13-polyreductions_11.png)
 
-::: {.fragment style="font-size: 0.85em;"}
+::: {.fragment style="font-size: 0.875em;"}
 
 - **Input**: CNF formula with $\leq$ 3 literals per clause
 - **Question**: Same as SAT, stricter format, are their differences?
 - **Surprising**: No easier than general SAT!
+- **What comes next**:
+  - Make a total of four reduction claims
+  - Prove polyequivalence among all three problems
+  - Serve as a foundation for NP-completeness theory
 
 :::
 
@@ -588,7 +592,7 @@ start with some circuits!
   - SAT $\leq_P$ CircuitSAT
   - 3-SAT $\leq_P$ SAT
   - SAT $\leq_P$ 3-SAT
-- {{< iconify fa6-solid equals >}} **Polyequivalence**: All three equally hard
+- {{< iconify fa6-solid equals >}} **Polyequivalence**: All three are equally hard!
 - {{< iconify fa6-solid star >}} **Key technique**: Transform structure while
 preserving satisfiability
 
