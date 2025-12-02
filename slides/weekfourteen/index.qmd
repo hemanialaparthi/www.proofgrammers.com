@@ -117,7 +117,7 @@ and number of oracle calls
 computability relationships, unlimited time
 - {{< iconify fa6-solid rocket >}} **Polyreductions**: Prove efficiency
 relationships, polynomial time
-- {{< iconify fa6-solid balance-scale >}} **Why compare?**: Understanding
+- {{< iconify fa6-solid scale-balanced >}} **Why compare?**: Understanding
 restrictions helps choose right tool
 
 :::
@@ -139,7 +139,7 @@ difficulty in complexity theory!
 
 - **Turing reduction**: Solve problem $F$ by calling $G$ as a subroutine
 - **No time limit**: Can use $G$ multiple times, any running time
-- **Used for**: Proving computability relationships
+- **Used for**: Proving computability relationships among problems
 
 :::
 
@@ -147,7 +147,9 @@ difficulty in complexity theory!
 
 {{< iconify fa6-solid gears >}} Turing reductions played a central role in
 creating the tree of uncomputable problems through a proof-by-contradiction
-technique. Now, we define a new reduction to help with complexity!
+technique. **Now, we define a new reduction to help with computational
+complexity**!
+
 
 :::
 
@@ -245,6 +247,15 @@ total weight between $L$ and $H$?
 27" → solution "4 6 16" (total = 26)
 - {{< iconify fa6-solid star >}} **In PolyCheck**: Easy to verify a proposed
 packing, hard to find one
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Quick PolyCheck reminder**: A problem is in PolyCheck if we can verify a
+proposed solution in polynomial time, even if finding that solution might be
+hard. PACKING fits perfectly: given a subset, we just sum the weights and check
+if $L \leq \text{sum} \leq H$ in $O(n)$ time!
 
 :::
 
