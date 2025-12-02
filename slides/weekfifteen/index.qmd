@@ -401,18 +401,6 @@ problems!
 
 :::
 
-## Another perspective on the definition
-
-![](14-np-completeness_13.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Multiple views**: Different ways to understand NP-completeness
-- **All equivalent**: Choose the view that makes most sense to you
-- **Proofgrammers should understand all equivalent definitions**!
-
-:::
-
 ## Polyequivalence definition
 
 ![](14-np-completeness_14.png)
