@@ -343,15 +343,16 @@ proving other problems NP-complete
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.7em;"}
+::: {.fragment .fade .boxed-content style="font-size: 0.65em;"}
 
 **Cook-Levin theorem "opened the floodgates"**: once we know one problem is
 NP-complete, we can prove others are NP-complete by reducing from it. This
-created a cascade of NP-completeness results!
+created a cascade of NP-completeness results! Creates a group of equally hard
+problems!
 
 :::
 
-## Equivalent definition using SAT
+## Definition using SAT
 
 ![](14-np-completeness_9.png)
 
@@ -359,11 +360,12 @@ created a cascade of NP-completeness results!
 
 - **Because of Cook-Levin**: We can use SAT as a starting point
 - **Easier definition**: Just reduce from SAT instead of all NP problems
-- **Exercise**: Why is this definition equivalent to the classical one?
+- **Exercise**: Why is this definition equivalent to the "classical one"?
+- **However, a more general definition is actually possible**!
 
 :::
 
-## Visualization of SAT-based definition
+## Generalized definition
 
 ![](14-np-completeness_10.png)
 
@@ -409,18 +411,6 @@ of NP-complete problems!
 - **Replace SAT**: Use any known NP-complete problem $C$
 - **Exercise**: Why is this definition equivalent to earlier ones?
 - **Flexibility**: Choose reduction source that's most convenient
-
-:::
-
-## Diagram of general definition
-
-![](14-np-completeness_12.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Arrow from $C$**: Shows polyreduction from known NP-complete problem
-- **Must be in NP**: Two conditions to verify
-- **Building the web**: Each new proof extends the network
 
 :::
 
