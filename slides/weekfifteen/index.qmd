@@ -288,27 +288,27 @@ for NP-completeness!
 
 # NP-complete problems are the "hardest" in NP
 
-::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+::: {.incremental style="margin-top: -0.5em; font-size: 0.75em;"}
 
-- {{< iconify fa6-solid trophy >}} **Classical definition**: NP-complete
-means all NP problems polyreduce to it
-- {{< iconify fa6-solid lightbulb >}} **Key property**: Hardest problems
-in NP
-- {{< iconify fa6-solid circle-check >}} **Must be in NP**: The problem
-itself is in NP
-- {{< iconify fa6-solid link >}} **Universal target**: Every NP problem
-reduces to it
-- {{< iconify fa6-solid rocket >}} **Implication**: Solving one solves
-them all!
+- {{< iconify fa6-solid trophy >}} **Classical definition**: NP-complete means
+all NP problems polyreduce to it
+- {{< iconify fa6-solid lightbulb >}} **Key property**: These are the "hardest
+problems in NP"
+- {{< iconify fa6-solid circle-check >}} **Must be in NP**: The problem itself
+is in NP
+- {{< iconify fa6-solid link >}} **Universal target**: Every NP problem reduces
+to it
+- {{< iconify fa6-solid rocket >}} **Implication**: Solving one solves them
+all!
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.75em;"}
+::: {.fragment .fade .boxed-content style="font-size: 0.65em;"}
 
-**NP-complete captures maximum hardness in NP**: these are the problems that
+**NP-complete captures "maximum hardness" in NP**: these are the problems that
 are at least as hard as every other problem in NP. If we could solve one
 NP-complete problem in polynomial time, we could solve all NP problems in
-polynomial time!
+polynomial time! See the benefit?
 
 :::
 
@@ -322,6 +322,7 @@ polynomial time!
 - **Example**: DHC is NP-complete (although we haven't proved it yet)
 - **Surprising fact**: All NP problems polyreduce to DHC!
 - **This is strange but true**: One problem captures all of NP
+- Let's start with the Cook-Levin theorem!
 
 :::
 
@@ -342,9 +343,9 @@ proving other problems NP-complete
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+::: {.fragment .fade .boxed-content style="font-size: 0.7em;"}
 
-**Cook-Levin theorem opened the floodgates**: once we know one problem is
+**Cook-Levin theorem "opened the floodgates"**: once we know one problem is
 NP-complete, we can prove others are NP-complete by reducing from it. This
 created a cascade of NP-completeness results!
 
