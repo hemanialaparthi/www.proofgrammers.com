@@ -322,7 +322,7 @@ polynomial time! See the benefit?
 - **Example**: DHC is NP-complete (although we haven't proved it yet)
 - **Surprising fact**: All NP problems polyreduce to DHC!
 - **This is strange but true**: One problem captures all of NP
-- Let's start with the Cook-Levin theorem!
+- However, let's start with the Cook-Levin theorem!
 
 :::
 
