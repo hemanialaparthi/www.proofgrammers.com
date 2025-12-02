@@ -74,8 +74,8 @@ relationships between computational problems! **Let's dive in**!
 with learning objectives **CS-204-1** and **CS-204-4**. We will define a
 powerful technique for **comparing problem difficulty**. This technique lets
 us prove that if we can solve problem $Y$ efficiently, then we can also solve
-problem $X$ efficiently! **As proofgrammers, let's explore how to establish
-formal relationships between computational problems**. Ready to reduce?
+problem $X$ efficiently. **As proofgrammers, let's explore how to establish
+formal relationships between computational problems**!
 
 :::
 
