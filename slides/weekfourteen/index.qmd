@@ -138,7 +138,7 @@ difficulty in complexity theory!
 ::: {.fragment style="font-size: 0.85em;"}
 
 - **Turing reduction**: Solve problem $F$ by calling $G$ as a subroutine
-- **No time limit**: Can use $G$ multiple times, any running time
+- **No time limit**: Focus is not on transformation's efficiency
 - **Used for**: Proving computability relationships among problems
 
 :::
@@ -173,8 +173,6 @@ longer phrase "polynomial-time mapping reduces"
 
 - {{< iconify fa6-solid stopwatch >}} **Time constraint**: Polyreductions
 require polynomial-time transformation
-- {{< iconify fa6-solid phone >}} **Number of calls**: Turing reductions
-can call $G$ multiple times
 - {{< iconify fa6-solid map >}} **Mapping**: Polyreductions map instances
 directly, preserving structure
 - {{< iconify fa6-solid rocket >}} **Efficiency**: Polyreductions preserve
@@ -236,14 +234,14 @@ verify all three conditions in every proof!
 
 ::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
 
-- {{< iconify fa6-solid box >}} **Input**: Weights $w_1, w_2, \ldots, w_m$ and
-thresholds $L$ (low) and $H$ (high)
+- {{< iconify fa6-solid box >}} **Input**: Weights $w_1, w_2,
+\ldots, w_m$ and thresholds $L$ and $H$
 - {{< iconify fa6-solid truck >}} **Metaphor**: Load packages into delivery
 truck with weight limits
 - {{< iconify fa6-solid question >}} **Question**: Can we select subset with
 total weight between $L$ and $H$?
-- {{< iconify fa6-solid check >}} **Example**: Weights "12 4 6 24 4 16; 20;
-27" → solution "4 6 16" (total = 26)
+- {{< iconify fa6-solid check >}} **Example**: Weights "12 4 6 24 4 16; 20; 27"
+→ solution "4 6 16" (total = 26)
 - {{< iconify fa6-solid star >}} **In PolyCheck**: Easy to verify a proposed
 packing, hard to find one
 
@@ -342,8 +340,6 @@ NP-completeness using these tools!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Single transformation**: Map once from $F$ to $G$
-- **Fixed mapping**: Cannot adapt based on $G$'s answer
 - **Time bounded**: Transformation must be polynomial
 - **Stronger result**: Proves efficiency relationship
 
@@ -353,7 +349,7 @@ NP-completeness using these tools!
 
 **Polyreductions are stricter but reveal more**: the constraints mean that
 $F \leq_P G$ tells us that $F$ is "no harder" than $G$ in terms of
-computational complexity! This is exactly what we need for NP-completeness!
+computational complexity! Hooray, this is exactly what we need for NP-completeness!
 
 :::
 
@@ -365,7 +361,7 @@ computational complexity! This is exactly what we need for NP-completeness!
 structure for all polyreductions
 - {{< iconify fa6-solid check-double >}} **Condition 1**: Positive instances
 map to positive instances
-- {{< iconify fa6-solid times-circle >}} **Condition 2**: Negative instances
+- {{< iconify fa6-solid circle-check >}} **Condition 2**: Negative instances
 map to negative instances
 - {{< iconify fa6-solid clock >}} **Condition 3**: Transformation runs in
 polynomial time
@@ -384,18 +380,18 @@ make this second nature!
 
 ## Three conditions to verify
 
-::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+::: {.incremental style="margin-top: -0.5em; font-size: 0.7em;"}
 
 - {{< iconify fa6-solid arrow-right >}} **Condition 1 (pos→pos)**: Every
 positive instance of $F$ maps to a positive instance of $G$
 - {{< iconify fa6-solid arrow-left >}} **Condition 2 (neg→neg)**: Every
-negative instance of $F$ maps to a negative instance of $G$
+negative instance of $F$ maps to negative instance of $G$
 - {{< iconify fa6-solid stopwatch >}} **Condition 3 (polytime)**: The
-transformation $R$ runs in polynomial time
+transformation $C$ runs in polynomial time
 - {{< iconify fa6-solid lightbulb >}} **Key insight**: Conditions 1 and 2
 together ensure correctness
 - {{< iconify fa6-solid rocket >}} **Why polytime?**: Ensures efficiency
-is preserved
+is preserved, which is critical for complexity
 
 :::
 
@@ -407,18 +403,22 @@ This systematic approach works for all polyreduction proofs!
 
 :::
 
+::: fragment
+
+- **Next**: Investigate graph problems with Hamilton cycles
+- **Then**: Explore satisfiability problems: CircuitSAT, SAT, 3-SAT
+
+:::
+
 # Graph polyreductions with Hamilton cycles
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
-- {{< iconify fa6-solid project-diagram >}} **Hamilton cycles**: Visit every
-vertex exactly once, return to start
-- {{< iconify fa6-solid arrows-alt >}} **Two variants**: Undirected (UHC) and
-directed (DHC) graphs
-- {{< iconify fa6-solid question >}} **Relationship**: Are they equally hard?
-- {{< iconify fa6-solid exchange-alt >}} **Goal**: Show UHC $\equiv_P$ DHC via
-bidirectional reductions
-- {{< iconify fa6-solid tools >}} **Technique**: Graph transformation gadgets
+- **Hamilton cycles**: Visit every vertex exactly once, return to start
+-  **Two variants**: Undirected (UHC) and directed (DHC) graphs
+- **Relationship**: Are they equally hard?
+- **Goal**: Show UHC $\equiv_P$ DHC via bidirectional reductions
+- **Technique**: Graph transformation gadgets
 
 :::
 
@@ -426,7 +426,8 @@ bidirectional reductions
 
 {{< iconify fa6-solid gears >}} **Hamilton cycle problems are NP-complete**:
 understanding these reductions helps us see why seemingly different problems
-have the same computational difficulty!
+have the same computational difficulty! It turns out that UHC and DHC are
+equally hard! But, can we prove it?
 
 :::
 
@@ -434,16 +435,16 @@ have the same computational difficulty!
 
 ::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
 
-- {{< iconify fa6-solid project-diagram >}} **UHC (Undirected Hamilton
-Cycle)**: Does an undirected graph have a Hamilton cycle?
-- {{< iconify fa6-solid arrow-right >}} **DHC (Directed Hamilton Cycle)**:
-Does a directed graph have a Hamilton cycle?
-- {{< iconify fa6-solid question >}} **Relationship**: How do these
-problems compare?
-- {{< iconify fa6-solid link >}} **Goal**: Prove polyreduction
-relationships between them
+- {{< iconify fa6-solid diagram-project >}} **UHC**: Does an undirected graph
+have a Hamilton cycle?
+- {{< iconify fa6-solid arrow-right >}} **DHC**: Does a directed graph have a
+Hamilton cycle?
+- {{< iconify fa6-solid question >}} **Relationship**: How do these problems
+compare?
+- {{< iconify fa6-solid link >}} **Goal**: Prove polyreduction relationships
+between them
 - {{< iconify fa6-solid lightbulb >}} **Key trick**: Convert graph
-representations
+representations efficiently
 
 :::
 
@@ -482,14 +483,13 @@ for complexity theory!
 ::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
 
 **Bidirectional polyreductions**: Since UHC $\leq_P$ DHC and DHC $\leq_P$ UHC,
-these problems are equally hard! This is called polyequivalence and we'll
-formalize it later!
+these problems are equally hard! This is called polyequivalence!
 
 :::
 
 # Satisfiability problems are fundamental
 
-::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
 
 - {{< iconify fa6-solid microchip >}} **Boolean satisfiability**: Can we make
 a formula or circuit output True?
@@ -499,16 +499,17 @@ and 3-SAT
 SAT $\equiv_P$ 3-SAT
 - {{< iconify fa6-solid trophy >}} **Central importance**: Foundation for
 NP-completeness theory
-- {{< iconify fa6-solid tools >}} **Real applications**: Circuit design,
+- {{< iconify fa6-solid gears >}} **Real applications**: Circuit design,
 verification, planning
 
 :::
 
 ::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
 
-{{< iconify fa6-solid gears >}} **SAT problems are everywhere**: from
-verifying computer chips to scheduling problems. Understanding their equivalence
-helps us see the deep connections in computational complexity!
+{{< iconify fa6-solid gears >}} **SAT problems are everywhere**: from verifying
+computer chips to scheduling problems to software testing. Understanding their
+equivalence helps us see the deep connections in computational complexity! Let's 
+start with some circuits!
 
 :::
 
@@ -532,6 +533,10 @@ helps us see the deep connections in computational complexity!
 ::: {.fragment style="font-size: 0.85em;"}
 
 - **Input**: Boolean formula in CNF (AND of ORs)
+  - $x_1$ through $x_5$ are boolean variables
+  - $\neg x_2$ is the logical negation of $x_2$
+  - $(x_1 \vee \neg x_2)$ is a logical OR clause
+  - $x_1 \wedge x_2$ combines clauses with logical AND
 - **Question**: Exists assignment making formula True?
 - **CNF example**: $(x_1 \vee \neg x_2) \wedge (x_2 \vee x_3)$
 - **Restriction**: CircuitSAT limited to formula structure
@@ -545,33 +550,32 @@ helps us see the deep connections in computational complexity!
 ::: {.fragment style="font-size: 0.85em;"}
 
 - **Input**: CNF formula with $\leq$ 3 literals per clause
-- **Question**: Same as SAT, stricter format
-- **Example**: $(x \vee y \vee z) \wedge (\neg x \vee y)$
+- **Question**: Same as SAT, stricter format, are their differences?
 - **Surprising**: No easier than general SAT!
 
 :::
 
-# Polyreductions between SAT variants
+# Polyreductions for SATs
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
-- {{< iconify fa6-solid arrow-right >}} **Reduction chain**: CircuitSAT
-$\leq_P$ SAT $\leq_P$ 3-SAT
+- {{< iconify fa6-solid arrow-right >}} **Reduction claims**:
+  - CircuitSAT $\leq_P$ SAT
+  - SAT $\leq_P$ CircuitSAT
+  - 3-SAT $\leq_P$ SAT
+  - SAT $\leq_P$ 3-SAT
 - {{< iconify fa6-solid equals >}} **Polyequivalence**: All three equally hard
-- {{< iconify fa6-solid magic >}} **Key technique**: Transform structure while
+- {{< iconify fa6-solid star >}} **Key technique**: Transform structure while
 preserving satisfiability
-- {{< iconify fa6-solid puzzle-piece >}} **CircuitSAT to SAT**: Convert gates
-to clauses
-- {{< iconify fa6-solid scissors >}} **SAT to 3-SAT**: Split long clauses
-using dummy variables
 
 :::
 
 ::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
 
-{{< iconify fa6-solid gears >}} **The reduction chain proves equivalence**:
-each transformation preserves satisfiability in polynomial time, showing all
-three problems have the same fundamental difficulty!
+{{< iconify fa6-solid gears >}} **The reduction chain proves equivalence**: each
+transformation preserves satisfiability in polynomial time, showing all three
+problems have the same fundamental difficulty! Wow, this is an impressive
+result!
 
 :::
 
@@ -584,7 +588,7 @@ three problems have the same fundamental difficulty!
 - **Transform**: Each gate becomes clauses enforcing its logic
 - **AND gate**: $z = x \wedge y$ becomes clauses about $x, y, z$
 - **OR gate**: $z = x \vee y$ becomes different clauses
-- **Result**: Formula satisfiable iff circuit satisfiable
+- **Result**: Formula satisfiable *iff* circuit satisfiable
 
 :::
 
@@ -597,7 +601,7 @@ three problems have the same fundamental difficulty!
 - **Problem**: Clause $(x_1 \vee x_2 \vee x_3 \vee x_4)$ too long
 - **Solution**: Split using dummy variable $z$
 - **Result**: $(x_1 \vee x_2 \vee z) \wedge (\neg z \vee x_3 \vee x_4)$
-- **Preserves**: Original satisfiable iff split version satisfiable
+- **Preserves**: Original satisfiable *iff* split version satisfiable
 
 :::
 
@@ -620,10 +624,10 @@ for next chapter's theory
 
 ::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
 
-{{< iconify fa6-solid gears >}} **Polyequivalence partitions problems into
+{{< iconify fa6-solid gears >}} **Polyequivalence "partitions" problems into
 difficulty classes**: if solving one problem in the class efficiently solves
 all problems in that class, then they form a natural unit of study. This
-creates the mathematical structure underlying NP-completeness!
+creates the mathematical structure for NP-completeness!
 
 :::
 
@@ -646,7 +650,7 @@ H$
 
 **Polyequivalence creates complexity classes**: problems that are
 polyequivalent have the same fundamental difficulty. This is the foundation for
-NP-completeness theory in the next chapter!
+NP-completeness theory in the next chapter! Get ready for some fun!
 
 :::
 
