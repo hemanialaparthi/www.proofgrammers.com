@@ -198,14 +198,14 @@ let's formally defintine polyreductions!*
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
-- {{< iconify fa6-solid book >}} **Formal notation**: $F \leq_P G$ means "F
-polyreduces to G"
+- {{< iconify fa6-solid book >}} **Formal notation**: $F \leq_P G$ means
+"F polyreduces to G"
 - {{< iconify fa6-solid list-check >}} **Three conditions**: Must verify all
 three for valid reduction
-- {{< iconify fa6-solid map >}} **Transformation function**: Convert F
-instances to G instances
-- {{< iconify fa6-solid arrow-right >}} **Interpretation**: If G is easy, then
-F is easy
+- {{< iconify fa6-solid map >}} **Transformation function**: Convert $F$
+instances to $G$ instances
+- {{< iconify fa6-solid arrow-right >}} **Interpretation**: If $G$ is
+efficiently solvable, then $F$ is also!
 - {{< iconify fa6-solid graduation-cap >}} **Proof structure**: Always verify
 pos→pos, neg→neg, polytime
 
@@ -213,9 +213,9 @@ pos→pos, neg→neg, polytime
 
 ::: {.fragment .boxed-content .fade style="margin-top: -0.25em; font-size: 0.7em;"}
 
-{{< iconify fa6-solid gears >}} **Three conditions work together**: they
-ensure that solving G efficiently lets us solve F efficiently. Proofgrammers
-must verify all three conditions in every proof!
+{{< iconify fa6-solid gears >}} **Three conditions work together**: they ensure
+that solving $G$ efficiently lets us solve $F$ efficiently. Proofgrammers must
+verify all three conditions in every proof!
 
 :::
 
@@ -227,7 +227,7 @@ must verify all three conditions in every proof!
 
 - **Notation**: $F \leq_P G$ means "$F$ polyreduces to $G$"
 - **Three conditions**: pos→pos, neg→neg, and polytime transformation
-- **Transformation**: Function $R$ converts $F$ instances to $G$ instances
+- **Transformation**: Function $C$ converts $F$ instances to $G$ instances
 - **Interpretation**: If we can solve $G$, we can solve $F$ efficiently
 
 :::
