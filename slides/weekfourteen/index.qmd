@@ -160,11 +160,13 @@ technique. Now, we define a new reduction to help with complexity!
 - **Polyreduction**: Transform $F$ instance to $G$ instance in polytime
 - **Call once**: Only one call to $G$, then transform result back
 - **Strict constraint**: Transformation must run in polynomial time
-- **Used for**: Proving efficiency relationships between problems
+- **Purpose**: Proving efficiency relationships between problems
+- **Reminder**: We will often use the shortcut phrase "polyreduces" for the
+longer phrase "polynomial-time mapping reduces"
 
 :::
 
-## Key differences between reduction types
+## Differences between reduction types
 
 ::: {.incremental style="margin-top: -0.25em; font-size: 0.8em;"}
 
@@ -185,7 +187,9 @@ complexity, not just computability
 
 **Polyreductions are more restrictive but more powerful**: the polynomial-time
 constraint means that polyreductions reveal efficiency relationships, not just
-computability relationships! This makes them perfect for complexity theory!
+computability relationships! This makes them perfect for complexity theory! Can
+you see how this builds on the "reduction concept" and then extends it? *Okay,
+let's formally defintine polyreductions!*
 
 :::
 
@@ -206,11 +210,11 @@ pos→pos, neg→neg, polytime
 
 :::
 
-::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+::: {.fragment .boxed-content .fade style="margin-top: -0.25em; font-size: 0.7em;"}
 
-{{< iconify fa6-solid gears >}} **The three conditions work together**: they
+{{< iconify fa6-solid gears >}} **Three conditions work together**: they
 ensure that solving G efficiently lets us solve F efficiently. Proofgrammers
-must verify all three conditions in every polyreduction proof!
+must verify all three conditions in every proof!
 
 :::
 
