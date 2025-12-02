@@ -1,7 +1,7 @@
 ---
-title: "Polynomial-time Mapping Reductions"
+title: "Polytime Mapping Reductions"
 description: "Prove that X is as easy as Y"
-date: "2025-12-01"
+date: "2025-11-24"
 date-format: long
 author: Gregory M. Kapfhammer
 execute:
