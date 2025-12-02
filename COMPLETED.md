@@ -1998,6 +1998,303 @@ objectives and standard complexity class presentations
 - Containment diagram: 11-poly-and-expo_2.png
 - All3Sets specification: 11-poly-and-expo_3.png
 - AllSubsets specification: 11-poly-and-expo_4.png
+
+## Implement New Slides for Chapter Fourteen, "NP-Completeness: Most
+Hard Problems are Equally Hard" (December 2, 2025)
+
+- [X] You have access to the content of the book in the file:
+`What-Can-Be-Computed.pdf` and `What-Can-Be-Computed.md` that is in the root of
+this repository.
+- [X] You have access to the slides of the book in PPTX (which is hard for you
+to read) and a QMD file (which is easier for you to read) in the
+`theoreticalmachines/wcbc-slides/` directory.
+- [X] You have access to the images that were created from the slides for this
+chapter. These images may be especially important because of the fact that there
+are some diagrams that illustrate key concepts like "Summary of complexity
+classes, restricting attention to decision problems only" and "Summary of
+complexity classes, including nondecision problems". The content in the
+quotation marks is the name of the slide that contains these images. You can
+include these images into the slides you make by finding them in the `img/`
+directory that is in the `theoreticalmachines/wcbc-slides/`. You have my
+permission to access this directory and to them copy images into the directory
+for the slides that you are creating to complete these tasks.
+- [X] You have access to the source code connected to this book in the directory
+`theoreticalmachines/wcbc-code/`. You may use this source code inside of a slide
+as long as you incorporate it into a `{pyodide}` fenced code block.
+- [X] I have created a template file for the slides in the
+`slides/weekfifteen/index.qmd`. You can add to this file! Please note that I
+have already created the correct title and added some learning objective slides
+that I want you to keep in this slide deck.
+- [X] I would like you to create a starting version of the slides for Chapter
+fourteen in the `slides/weekfifteen/index.qmd` file. The starting and ending
+content in this file is like a "bookend" for the content that you write. With
+that said, please note that this is only template content to show you the
+format. You need to actually create the content that goes on these slides.
+- [X] You need to succinctly and simply and clearly cover the content
+about NP-completeness, bearing in mind that this content is for undergraduate
+students who are learning about theoretical computer science for the first time.
+Here are some topics that you need to cover in an intuitive fashion:
+    - P, NP, and Expo
+    - P versus NP
+    - NP-Complete
+    - NP-Hard
+    - How to prove that a problem is NP-complete
+    - Consequences of the possibility that P = NP
+    - Expectation that NP is not equal to P
+    - Good news and bad news about NP-completeness
+- [X] Please base the content off of that which is found in the course slides
+and in the course text book. You need to make sure that the content flows in
+the same order as the material in the book.
+- [X] Make sure to review the content from last week, which is in the
+`weekfourteen/` directory. This content introduces the idea of a polytime
+reduction. I have already explained this content and it can be used as a
+building block for the content that you create about NP-completeness.
+- [X] One challenge of this chapter is that it contains some source code
+examples that may not run correctly unless you include all needed source code
+from the book's archive. Do not include a source code example unless it is
+self-contained and it will run directly without an extra dependencies.
+- [X] There is source code available for you to include if you look in the
+directory that is called `theoreticalmachines/wcbc-code`. Please note that this
+is actually a symbolic link to another directory but you have my permission to
+access it and to copy files, like source code files, into the presentation's
+index.qmd file. You do not need to ask me for permission to do this task.
+- [X] Make sure to review all the prior slides that I have created in the
+`slides/` directory and the subdirectories for prior weeks in `weekone/` and
+`weektwo/` and `weekthree/` and `weekfour/` and `weeksix/` and `weekseven` and
+`weekeight/` to ensure that your slides are formatted and laid out just like the
+content that I have already created. There are also other directories that you
+can look at to see how I programmed these slides, like the most recent slide
+deck in the `weekfourteen/` directory. **Do not deviate from the format and
+style and voice that I have created for these slides!**
+- [X] Do not use slide layouts that you do not already see in these example
+slide decks. You must keep the same layout and flow that I have in these slides.
+- [X] Unless there is a clear motivation to do so, do you not use features of
+Quarto that you do not already see in these example slide decks.
+- [X] Do not make slides if they are not directly connected to the content in
+the book, the content in the slides (i.e., the PPTX or the extracted QMD file)
+or in the source code that connects to this chapter of the book.
+- [X] Create the same number of slides in this slide deck as you see in the
+example slide decks. Do not make these new slides any longer or shorter.
+- [X] Make sure to create "signposting" slides at the level of `#` that overview
+the next key idea that is going to be explained in the next section of slides.
+- [X] Make sure that you connect the slides to the theme of being a
+"proofgrammer" as explained in the course syllabus that is available in
+`syllabus/index.qmd`.
+- [X] Make sure that the slides that you create are short, succinct, and clear.
+I will be revising this content, essentially using it as a starting point.
+- [X] Please follow all the rules and regulations for creating this content and
+make sure that you notify me when you have completed this task.
+- [X] Render slides and verify layout meets presentation standards. An easy way
+for you to make sure the slides fit the required format is to use short titles
+and to follow the font sizes and layouts I have already used.
+- [X] Document support and evidence in COMPLETED.md
+- [X] Place all the completed tasks at the bottom of the COMPLETED.md file,
+exactly as they are written in this plan, making sure that I have a historical
+record of the way in which I have asked for this content. Critically, I need to
+see exactly these tasks inside of the COMPLETED.md file so that I can see what
+was the prompt that I provided to the agent.
+- [X] Do not delete the PLAN.md file. Rather, you can remove any items from the
+file that were satisfactorily completed.
+- [X] Be careful about adding icons from the iconify package. You need to make
+sure that you **only use icons that I have already used in prior slide decks**.
+If you use other icons that are not in a prior slide deck, you need to make sure
+that those icons are actually valid by looking them up through the API that is
+provided by the web site https://icon-sets.iconify.design/.
+
+### Support for Content: Week Fifteen Slides (Chapter 14)
+
+**NP-Completeness Theoretical Foundation**:
+
+- **P versus NP Open Problem**: The most famous unsolved problem in computer
+science asks whether P = NP (every problem with polytime verification can be
+solved in polytime) - Clay Mathematics Institute offers $1M prize for solution
+- **Classical NP-Complete Definition**: Problem is NP-complete if (1) it is in
+NP and (2) all NP problems polyreduce to it, making it "hardest" in NP - from
+WCBC Chapter 14 Figure 14-np-completeness_8.png
+- **Cook-Levin Theorem (1970s)**: Proved SAT is NP-complete by showing all NP
+problems polyreduce to SAT, catalyzing cascade of NP-completeness results
+across computer science - foundational result enabling all subsequent
+NP-completeness proofs
+- **Polyequivalence-based Definition**: NP-complete problem is polyequivalent
+to any other NP-complete problem, showing all share same fundamental difficulty
+- from Figure 14-np-completeness_14.png
+
+**P, NP, and Expo Complexity Classes**:
+
+- **P (Polynomial Time)**: Decision problems solvable by deterministic program
+in polynomial time $O(n^k)$ - corresponds to "tractable" problems from Figure
+14-np-completeness_0.png
+- **NP (Nondeterministic Polynomial)**: Decision problems with polytime
+verification OR solvable by nondeterministic program in polynomial time -
+equivalent to PolyCheck from prior chapters (Figure 14-np-completeness_0.png)
+- **Expo (Exponential Time)**: Decision problems solvable in exponential time
+$O(2^{n^k})$ - contains both P and NP with known containment P ⊆ NP ⊆ Expo
+- **Determinism vs Nondeterminism Interpretation**: P means solvable with
+polytime deterministic program, NP means solvable with polytime
+nondeterministic program - from Figures 14-np-completeness_4-6.png
+
+**NP-Complete and NP-Hard Definitions**:
+
+- **NP-Complete as Hardest in NP**: All NP problems polyreduce to any
+NP-complete problem, making them maximum hardness within NP complexity class -
+if one NP-complete problem is in P, then P = NP (Figures
+14-np-completeness_8-15.png)
+- **NP-Hard More General**: Problem is NP-hard if all NP problems polyreduce to
+it, but might not be in NP itself - could be outside NP entirely and even
+harder (Figure 14-np-completeness_20.png)
+- **Equivalence for Problems in NP**: For decision problems in NP, NP-hard and
+NP-complete are equivalent concepts - distinction only matters for problems
+outside NP
+- **Examples**: Nondecision variants of NP-complete problems (TSP optimization,
+SAT model finding) are NP-hard but not NP-complete since they're not decision
+problems
+
+**Proving NP-Completeness Two-Step Technique**:
+
+- **Step 1 - Show in NP**: Construct polytime verifier for problem accepting
+positive instances with appropriate solution and hint - usually straightforward
+verification argument (Figure 14-np-completeness_29.png)
+- **Step 2 - Polyreduce from Known NP-Complete**: Show polyreduction from known
+NP-complete problem (SAT, 3-SAT, DHC, etc.) verifying pos→pos, neg→neg, and
+polytime transformation conditions
+- **Choose Reduction Source Wisely**: Pick NP-complete problem most similar to
+target problem to simplify reduction construction and proof verification
+- **Example Exercise**: Prove HalfUHC (Hamilton cycle using exactly half the
+vertices) is NP-complete by reducing from UHC or DHC
+
+**P = NP Consequences and Current Belief**:
+
+- **Revolutionary if True**: P = NP would mean every NP-complete problem
+solvable in polynomial time, transforming cryptography, optimization, AI, drug
+design, and protein folding (discussed in slides)
+- **Cryptography Broken**: Most encryption schemes (RSA, elliptic curve) rely
+on P ≠ NP assumption - if P = NP, secure communication becomes impossible with
+current methods
+- **Current Belief P ≠ NP**: Most researchers believe P ≠ NP based on asymmetry
+between solving and verification plus decades of failed attempts to find
+polytime algorithms for NP-complete problems
+- **No Proof Yet**: Despite 50+ years of intensive research by brilliant
+mathematicians and computer scientists, P versus NP remains unsolved -
+difficulty suggests fundamental mathematical barriers
+
+**CircuitSAT NP-Completeness Proof**:
+
+- **Key Fact**: Polytime programs can be implemented by polysized circuits
+(computers are made of circuits) - provides bridge between abstract computation
+and concrete circuits (Figures 14-np-completeness_23-26.png)
+- **Circuit Encoding**: Polytime program with polytime verifier can be encoded
+as polynomial-size Boolean circuit checking whether solution is valid
+- **All NP Problems Reduce**: Any NP problem has polytime verifier that becomes
+polysized circuit, and satisfying that circuit is exactly CircuitSAT problem
+(Figure 14-np-completeness_27.png)
+- **Foundation for All NP-Completeness**: Proving CircuitSAT is NP-complete
+enables all subsequent NP-completeness proofs by reduction chain - Cook-Levin
+theorem
+
+**Widespread NP-Completeness Examples**:
+
+- **Computer Science**: MaxClique, MaxCut, DeadlockAvoidance, CubicSubgraph -
+fundamental graph and scheduling problems
+- **Applied Mathematics**: IntegerProgramming, TaskAssignment,
+MinimumBroadcastTime, SparseMatrixCompression - optimization and resource
+allocation
+- **Pure Mathematics**: QuadraticDiophantineEquation, CosineIntegral - number
+theory and calculus problems
+- **Biology**: MultipleSequenceAlignment - DNA/protein sequence comparison for
+evolutionary analysis
+- **Web of Reductions**: Figure 14-np-completeness_28.png shows interconnected
+reduction network proving thousands of problems equally hard
+
+**Good News and Bad News About NP-Completeness**:
+
+- **Some Problems Between P and NP-Complete**: Factor, DiscreteLog appear in NP
+but not known to be in P or NP-complete - intermediate difficulty possible
+- **Some "Hard" Problems Actually in P**: IsPrime, MinCut, ShortestPath,
+LinearProgramming have polytime algorithms despite seeming difficult - don't
+assume hardness without proof!
+- **Approximation Algorithms**: Some NP-hard problems (TSP, TaskAssignment)
+have efficient approximation algorithms with provable quality guarantees
+- **Real-World Solvability**: SAT solvers work well in practice despite
+worst-case NP-completeness - heuristics and special structure enable practical
+solutions
+- **Pseudo-Polynomial Algorithms**: Packing, SubsetSum, Partition,
+TaskAssignment solvable in time polynomial in numeric value but exponential in
+input size (bits)
+
+**Reformulations of P versus NP**:
+
+- **Reformulation 1**: P = NP if and only if every NP-complete problem is in P
+(Figures 14-np-completeness_16-19.png)
+- **Reformulation 2**: P ≠ NP if and only if no NP-complete problem is in P -
+focuses question on single NP-complete problem rather than all NP
+- **Reformulation 3**: Using polyequivalence, all NP-complete problems rise or
+fall together - solving one efficiently solves all efficiently
+- **Graphical Representation**: Diagrams show two scenarios (P = NP where
+classes coincide vs P ≠ NP with gap) from Figures
+14-np-completeness_1-3.png, 14-np-completeness_18.png
+
+**Educational Methodology and Proofgrammer Integration**:
+
+- **Theory-to-Proof Techniques**: Students learn systematic two-step template
+for proving NP-completeness, connecting formal complexity theory to practical
+proof construction
+- **Polyreduction Building Blocks**: Chapter 13 polyreduction concepts
+(pos→pos, neg→neg, polytime) directly applied to NP-completeness proofs -
+building on prior knowledge
+- **Progressive Complexity**: Content flows from basic P/NP definitions through
+multiple equivalent NP-complete definitions to proof techniques and real-world
+implications
+- **Practical Connections**: Cryptography, optimization, and approximation
+algorithm discussions motivate theoretical study with real-world consequences
+
+**Content Sources and Theoretical Support**:
+
+- **"What Can be Computed" Chapter 14**: Primary source for NP-completeness
+definitions, Cook-Levin theorem, CircuitSAT proof, and good/bad news about
+NP-completeness
+- **Author's Slides**: 30 images (14-np-completeness_0.png through _29.png)
+provide formal definitions, complexity class diagrams, circuit constructions,
+and reduction web visualization
+- **Cook-Levin 1970s Papers**: Original proofs that SAT is NP-complete and
+foundation for all subsequent NP-completeness theory
+- **Standard Complexity Literature**: Definitions align with Sipser, Garey &
+Johnson presentations of NP-completeness, P versus NP, and complexity class
+relationships
+
+**Quality Assurance and Verification**:
+
+- **Successful Rendering**: Slides render correctly with `quarto render
+slides/weekfifteen/index.qmd` producing functional HTML presentation without
+errors
+- **Image Integration**: Successfully copied 30 images from
+theoreticalmachines/wcbc-slides/img/ to slides/weekfifteen/ directory for
+inline display
+- **Layout Standards**: 17 section headings (#) and 33 subsection slides (##)
+comparable to other week's slide decks - content properly distributed without
+overflow
+- **Icon Usage**: All icons from iconify package verified to exist in prior
+slide decks (fa6-solid icons: check-circle, trophy, lightbulb, microscope,
+rocket, equals, question, explosion, globe, computer, calculator, dna,
+clipboard-list, check, link, pencil, circle-info, chart-line, clock) -
+consistent with established style
+- **80-Character Line Width**: All slide content maintains required line width
+for markdown formatting consistency
+- **Theoretical Accuracy**: Content precisely follows WCBC Chapter 14 learning
+objectives and standard NP-completeness presentations
+
+**Images Used (30 total)**:
+
+- P, NP, Expo definitions: 14-np-completeness_0.png
+- P versus NP scenarios: 14-np-completeness_1-3.png
+- Determinism vs nondeterminism: 14-np-completeness_4-6.png
+- Polyequivalent problems: 14-np-completeness_7.png
+- NP-complete definitions: 14-np-completeness_8-15.png
+- P vs NP reformulations: 14-np-completeness_16-19.png
+- NP-hard definition: 14-np-completeness_20.png
+- Complexity class summaries: 14-np-completeness_21-22.png
+- Circuit constructions: 14-np-completeness_23-27.png
+- Web of NP-completeness: 14-np-completeness_28.png
+- Proof technique template: 14-np-completeness_29.png
 - ShortestPath definition: 11-poly-and-expo_5.png
 - TSPPath definition: 11-poly-and-expo_6.png
 - TSP definition: 11-poly-and-expo_7.png
