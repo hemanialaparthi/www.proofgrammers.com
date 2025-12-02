@@ -253,7 +253,7 @@ packing, hard to find one
 PolyCheck if we can verify a proposed solution in polynomial time, even if
 finding that solution might be hard. PACKING fits perfectly: given a subset, we
 just sum the weights and check if $L \leq \text{sum} \leq H$ in $O(n)$
-time! **Does does it connect to PARTITION**?
+time! **How connects to PARTITION**?
 
 :::
 
@@ -380,7 +380,7 @@ make this second nature!
 
 ## Three conditions to verify
 
-::: {.incremental style="margin-top: -0.5em; font-size: 0.7em;"}
+::: {.incremental style="margin-top: -0.5em; font-size: 0.68em;"}
 
 - {{< iconify fa6-solid arrow-right >}} **Condition 1 (pos→pos)**: Every
 positive instance of $F$ maps to a positive instance of $G$
@@ -441,6 +441,8 @@ have a Hamilton cycle?
 Hamilton cycle?
 - {{< iconify fa6-solid question >}} **Relationship**: How do these problems
 compare?
+  - Is it harder to solve the problem with directed or undirected edges?
+  - Or, are directed and undirected edges equally hard to handle?
 - {{< iconify fa6-solid link >}} **Goal**: Prove polyreduction relationships
 between them
 - {{< iconify fa6-solid lightbulb >}} **Key trick**: Convert graph
@@ -452,7 +454,7 @@ representations efficiently
 
 **Hamilton cycles are fundamental**: many NP-complete problems involve finding
 paths or cycles that visit all vertices. Understanding these problems is crucial
-for complexity theory!
+for complexity theory! This also influences practical methods!
 
 :::
 
