@@ -482,10 +482,11 @@ for complexity theory! This also influences practical methods!
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+::: {.fragment .fade .boxed-content style="font-size: 0.775em;"}
 
-**Bidirectional polyreductions**: Since UHC $\leq_P$ DHC and DHC $\leq_P$ UHC,
-these problems are equally hard! This is called polyequivalence!
+**Bidirectional polyreductions**: Since UHC $\leq_P$ DHC and DHC $\leq_P$
+UHC, these problems are "equally hard"! This is called polyequivalence, which
+we'll define!
 
 :::
 
