@@ -331,8 +331,6 @@ NP-completeness using these tools!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Multiple calls**: Can invoke $G$ subroutine many times
-- **Adaptive**: Can make decisions based on previous calls
 - **No time bound**: Calls can take arbitrary time
 - **Weaker result**: Only proves computability relationship
 
