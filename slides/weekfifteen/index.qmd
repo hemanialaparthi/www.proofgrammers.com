@@ -160,15 +160,15 @@ easy to verify.
 
 :::
 
-## Alternative formulation of P versus NP
+## Alternative view of P versus NP
 
 ![](14-np-completeness_3.png)
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Scenario 1**: P = NP (unlikely but possible)
-- **Scenario 2**: P $\neq$ NP (widely believed)
-- **Importance**: This affects cryptography, optimization, and more
+- **Scenario 1**: P = NP is unlikely but possible
+- **Scenario 2**: P $\neq$ NP is widely believed
+- **Importance**: This affects cryptography, optimization, and much more
 - **Deep insight**: Verification might be fundamentally easier than solving
 
 :::
@@ -190,7 +190,7 @@ beats sequential search
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+::: {.fragment .fade style="font-size: 0.8em;"}
 
 **Nondeterminism captures parallel search**: nondeterministic programs can
 explore all possibilities simultaneously. The question is whether this
@@ -198,7 +198,7 @@ provides exponential speedup over deterministic search!
 
 :::
 
-## Computational interpretation with trees
+## Tree-based interpretation
 
 ![](14-np-completeness_4.png)
 
@@ -225,15 +225,20 @@ speedup
 
 :::
 
-## Another visual perspective
+## Another tree-based view
 
 ![](14-np-completeness_6.png)
 
-::: {.fragment style="font-size: 0.85em;"}
+::: {.fragment style="font-size: 0.7em;"}
 
-- **Alternative view**: Shows the relationship between P and NP
-- **Key insight**: NP contains problems easily verified but hard to solve
-- **Proofgrammers**: Must understand both views to grasp P versus NP
+- If the answer was yes, then P = NP!
+- **Looking ahead**:
+  - Next, we'll define NP-completeness
+  - Show how NP-complete problems are the "hardest" in NP
+  - Thousands of problems are polyequivalent to:
+    - CircuitSAT, SAT, or 3-SAT
+    - UHC or DHC
+  - **We can define a group of problems that are all "equally hard"**
 
 :::
 
