@@ -95,8 +95,8 @@ understand why they all have the same fundamental difficulty**!
 
 ::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
 
-**Key relationships**: We know P $\subseteq$ NP $\subseteq$ Expo, but are
-these proper subsets? This is the most famous open question in computer
+**Key relationships**: We know P $\subseteq$ NP $\subseteq$ Expo, but are these
+proper subsets? This is perhaps the most famous open question in computer
 science!
 
 :::
