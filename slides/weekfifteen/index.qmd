@@ -67,7 +67,7 @@ we'll use these tools to identify the "hardest" problems in NP!
 
 :::
 
-# NP-completeness shows most hard problems are equally hard!
+# NP-completeness shows most "hard" problems are "equally hard"!
 
 ::: {.fragment .boxed-content style="font-size: 0.825em;"}
 
@@ -106,18 +106,18 @@ science!
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
 - {{< iconify fa6-solid question >}} **The question**: Does P = NP?
-- {{< iconify fa6-solid trophy >}} **Million dollar prize**: Clay
-Mathematics Institute offers $1M
-- {{< iconify fa6-solid microscope >}} **What it means**: Can every
-problem with polytime verification be solved in polytime?
+- {{< iconify fa6-solid trophy >}} **Million dollar prize**: Clay Mathematics
+Institute offers $1M!
+- {{< iconify fa6-solid microscope >}} **What it means**: The key open question
+is "can every problem with polytime verification be solved in polytime?"
 - {{< iconify fa6-solid lightbulb >}} **Current belief**: P $\neq$ NP
 (verification is easier than solving)
-- {{< iconify fa6-solid rocket >}} **No proof yet**: Despite decades of
-effort by brilliant researchers
+- {{< iconify fa6-solid rocket >}} **No proof yet**: Despite decades of effort
+by brilliant researchers
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.75em;"}
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.7em;"}
 
 **P versus NP shapes modern cryptography**: if P = NP, most encryption
 schemes would be broken! Security depends on problems being hard to solve but
@@ -131,26 +131,36 @@ easy to verify.
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Green region**: This is where NP-complete problems live (if P $\neq$
-NP)
+- "**Middle region**": This is where NP-complete problems live, if P $\neq$ NP
 - **Question**: Are there any computational problems in this region?
 - **Belief**: Yes, thousands of problems are in NP but not in P
 
 :::
 
-## Understanding P versus NP visually
+# Intuitively grasp the P versus NP problem
+
+::: fragment
+
+- Introduce different ways to explain the problem
+- Give different ways to ask the same question
+- Try to understand visually and mathematically
+- **Hopefully, one approach will resonate with you!**
+
+:::
+
+## Try to grasp P versus NP debate
 
 ![](14-np-completeness_2.png)
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Left diagram**: If P = NP, the classes are identical
-- **Right diagram**: If P $\neq$ NP, there's a gap between them
-- **Question mark**: We don't know which diagram is correct!
+- **One understanding**: If P = NP, the classes are identical
+- **Alternative view**: If P $\neq$ NP, there's a "gap" between them
+- **Question key**: We don't know which diagram is correct!
 
 :::
 
-## Two scenarios for P versus NP
+## Alternative formulation of P versus NP
 
 ![](14-np-completeness_3.png)
 
