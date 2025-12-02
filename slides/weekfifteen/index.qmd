@@ -591,7 +591,7 @@ least as hard as NP-complete"!
 
 :::
 
-# Summary of complexity classes
+# Complexity classes
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
@@ -615,7 +615,7 @@ NP-hard problems are believed to be intractable!
 
 :::
 
-## Summary diagram for decision problems only
+## Decision problem summary
 
 ![](14-np-completeness_21.png)
 
@@ -628,7 +628,7 @@ NP-hard problems are believed to be intractable!
 
 :::
 
-## Summary including nondecision problems
+## Nondecision problem summary
 
 ![](14-np-completeness_22.png)
 
@@ -637,8 +637,6 @@ NP-hard problems are believed to be intractable!
 - **Broader view**: Includes optimization and search problems
 - **NP-hard region**: Contains problems outside NP
 - **Complete picture**: Shows full complexity landscape
-- **Proofgrammers**: Should understand both decision and nondecision
-views
 
 :::
 
@@ -663,9 +661,9 @@ seems fundamentally easier than solving
 
 ::: {.fragment .fade .boxed-content style="font-size: 0.75em;"}
 
-**P = NP would be revolutionary but is considered unlikely**: the
-asymmetry between solving and verification seems fundamental. Most
-cryptography depends on this asymmetry!
+**P = NP would be revolutionary but is considered unlikely**: the asymmetry
+between solving and verification seems fundamental: verifying is easier than
+solving. Most cryptography depends on this asymmetry!
 
 :::
 
@@ -687,11 +685,10 @@ hardness appears everywhere
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+::: {.fragment .fade style="font-size: 0.8em;"}
 
 **NP-completeness spans all of science and engineering**: from scheduling
-to circuit design to biology, the same fundamental hardness appears. This
-shows the universality of computational difficulty!
+to circuit design to biology, the same fundamental hardness appears!
 
 :::
 
