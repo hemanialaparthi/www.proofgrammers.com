@@ -66,7 +66,7 @@ relationships between computational problems! **Let's dive in**!
 
 :::
 
-# Polyreductions prove X is as easy as Y!
+# Polyreductions prove X is as easy as Y! Helpful!
 
 ::: {.fragment .boxed-content style="font-size: 0.875em;"}
 
@@ -105,6 +105,30 @@ standard approach in complexity theory! The fundamental ideas remain the same!
 :::
 
 # Comparing reductions: Turing vs Poly
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid shuffle >}} **Two reduction types**: Turing reductions
+vs polynomial-time mapping reductions
+- {{< iconify fa6-solid stopwatch >}} **Key difference**: Time constraints
+and number of oracle calls
+- {{< iconify fa6-solid microscope >}} **Turing reductions**: Prove
+computability relationships, unlimited time
+- {{< iconify fa6-solid rocket >}} **Polyreductions**: Prove efficiency
+relationships, polynomial time
+- {{< iconify fa6-solid balance-scale >}} **Why compare?**: Understanding
+restrictions helps choose right tool
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+
+{{< iconify fa6-solid gears >}} **Polyreductions are more restrictive but more
+powerful for complexity**: by requiring polynomial-time transformations, they
+preserve efficiency relationships. This makes them perfect for comparing problem
+difficulty in complexity theory!
+
+:::
 
 ## Recall: Turing reductions
 
@@ -158,6 +182,29 @@ computability relationships! This makes them perfect for complexity theory!
 
 # Formal definition of polyreduction
 
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid book >}} **Formal notation**: $X \leq_P Y$ means "X
+polyreduces to Y"
+- {{< iconify fa6-solid list-check >}} **Three conditions**: Must verify all
+three for valid reduction
+- {{< iconify fa6-solid map >}} **Transformation function**: Convert X
+instances to Y instances
+- {{< iconify fa6-solid arrow-right >}} **Interpretation**: If Y is easy, then
+X is easy
+- {{< iconify fa6-solid graduation-cap >}} **Proof structure**: Always verify
+pos→pos, neg→neg, polytime
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+
+{{< iconify fa6-solid gears >}} **The three conditions work together**: they
+ensure that solving Y efficiently lets us solve X efficiently. Proofgrammers
+must verify all three conditions in every polyreduction proof!
+
+:::
+
 ## Polyreduction definition
 
 ![](13-polyreductions_2.png)
@@ -193,6 +240,29 @@ instances? Or if it runs in exponential time?
 :::
 
 # Compare Turing and poly reductions
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid code-branch >}} **Turing reductions**: Multiple calls,
+adaptive, no time bound
+- {{< iconify fa6-solid map-marked >}} **Polyreductions**: Single
+transformation, fixed, polynomial time
+- {{< iconify fa6-solid lightbulb >}} **Trade-off**: Flexibility vs stronger
+guarantees
+- {{< iconify fa6-solid trophy >}} **Power comparison**: Polyreductions reveal
+efficiency relationships
+- {{< iconify fa6-solid forward >}} **Complexity theory**: Polyreductions are
+the right tool
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+
+{{< iconify fa6-solid gears >}} **Restrictions create power**: by limiting to
+polynomial time and single transformations, polyreductions give us exactly what
+we need for NP-completeness theory!
+
+:::
 
 ## Turing reduction flexibility
 
@@ -230,6 +300,29 @@ computational complexity! This is exactly what we need for NP-completeness!
 
 # Proof technique for polyreductions
 
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid clipboard-list >}} **Standard template**: Same proof
+structure for all polyreductions
+- {{< iconify fa6-solid check-double >}} **Condition 1**: Positive instances
+map to positive instances
+- {{< iconify fa6-solid times-circle >}} **Condition 2**: Negative instances
+map to negative instances
+- {{< iconify fa6-solid clock >}} **Condition 3**: Transformation runs in
+polynomial time
+- {{< iconify fa6-solid pencil >}} **Proof strategy**: Describe
+transformation, verify all three
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+
+{{< iconify fa6-solid gears >}} **Follow this template every time**: systematic
+verification of all three conditions ensures correctness. Proofgrammers should
+make this second nature!
+
+:::
+
 ## Three conditions to verify
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
@@ -256,6 +349,27 @@ This systematic approach works for all polyreduction proofs!
 :::
 
 # Graph polyreductions with Hamilton cycles
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid project-diagram >}} **Hamilton cycles**: Visit every
+vertex exactly once, return to start
+- {{< iconify fa6-solid arrows-alt >}} **Two variants**: Undirected (UHC) and
+directed (DHC) graphs
+- {{< iconify fa6-solid question >}} **Relationship**: Are they equally hard?
+- {{< iconify fa6-solid exchange-alt >}} **Goal**: Show UHC $\equiv_P$ DHC via
+bidirectional reductions
+- {{< iconify fa6-solid tools >}} **Technique**: Graph transformation gadgets
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+
+{{< iconify fa6-solid gears >}} **Hamilton cycle problems are NP-complete**:
+understanding these reductions helps us see why seemingly different problems
+have the same computational difficulty!
+
+:::
 
 ## Two important graph problems
 
@@ -316,200 +430,143 @@ formalize it later!
 
 # Satisfiability problems are fundamental
 
-## Three critical SAT problems
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
-::: {.incremental style="margin-top: -0.5em; font-size: 0.825em;"}
-
-- {{< iconify fa6-solid microchip >}} **CircuitSAT**: Can a Boolean
-circuit output 1?
-  - Given circuit with binary inputs and single output
-  - Find input assignment making output = 1
-- {{< iconify fa6-solid function >}} **SAT**: Can a Boolean formula be
-satisfied?
-  - Formula must be in Conjunctive Normal Form (CNF)
-  - Find variable assignment making formula True
-- {{< iconify fa6-solid calculator >}} **3-SAT**: SAT with 3 literals per
-clause max
-  - Same as SAT but clauses have $\leq$ 3 literals
-  - Most restricted but still powerful
+- {{< iconify fa6-solid microchip >}} **Boolean satisfiability**: Can we make
+a formula or circuit output True?
+- {{< iconify fa6-solid layer-group >}} **Three variants**: CircuitSAT, SAT,
+and 3-SAT
+- {{< iconify fa6-solid link >}} **All polyequivalent**: CircuitSAT $\equiv_P$
+SAT $\equiv_P$ 3-SAT
+- {{< iconify fa6-solid trophy >}} **Central importance**: Foundation for
+NP-completeness theory
+- {{< iconify fa6-solid tools >}} **Real applications**: Circuit design,
+verification, planning
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.775em;"}
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
 
-**Satisfiability problems have huge practical applications**: circuit design,
-program verification, scheduling, planning. They also play a central role in
-complexity theory as we'll see in the next chapter!
+{{< iconify fa6-solid gears >}} **SAT problems are everywhere**: from
+verifying computer chips to scheduling problems. Understanding their equivalence
+helps us see the deep connections in computational complexity!
 
 :::
 
-## CircuitSAT instance visualization
+## CircuitSAT: Can a circuit output 1?
 
 ![](13-polyreductions_8.png)
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Circuit structure**: Gates combine to produce output
-- **Question**: Can any input make output = 1?
-- **Exercise**: Is this circuit satisfiable?
+- **Input**: Boolean circuit with variables
+- **Question**: Exists assignment making output = 1?
+- **Example**: Circuit with AND, OR, NOT gates
+- **Applications**: Circuit verification and design
 
 :::
 
-## CircuitSAT as ASCII string
-
-![](13-polyreductions_9.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **String format**: Represents circuit structure
-- **Practical**: Can be processed by programs
-- **Standard**: Consistent representation across problems
-
-:::
-
-# Boolean formula terminology
-
-## CNF and clause structure
+## SAT: Can a formula be satisfied?
 
 ![](13-polyreductions_10.png)
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Literal**: Variable or its negation ($x$ or $\neg x$)
-- **Clause**: Disjunction (OR) of literals
-- **CNF**: Conjunction (AND) of clauses
-- **Example**: $(x_1 \vee \neg x_2) \wedge (x_2 \vee x_3)$
+- **Input**: Boolean formula in CNF (AND of ORs)
+- **Question**: Exists assignment making formula True?
+- **CNF example**: $(x_1 \vee \neg x_2) \wedge (x_2 \vee x_3)$
+- **Restriction**: CircuitSAT limited to formula structure
 
 :::
 
-## Exercise: which are positive SAT instances?
+## 3-SAT: At most 3 literals per clause
 
 ![](13-polyreductions_11.png)
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Trick question**: Not in CNF, so negative instance by definition!
-- **Important**: Problem definition includes format requirements
-- **Lesson**: Always check input format validity
-
-:::
-
-## SAT instances in ASCII format
-
-![](13-polyreductions_12.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Practical representation**: Easy for programs to parse
-- **Clauses**: Separated by semicolons
-- **Literals**: Variables and negations clearly marked
-
-:::
-
-# 3-SAT restricts clause size
-
-## 3-SAT definition and examples
-
-::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
-
-- {{< iconify fa6-solid calculator >}} **Restriction**: Each clause has at
-most 3 literals
-- {{< iconify fa6-solid check >}} **Still powerful**: Surprisingly, this
-restriction doesn't make it easier
-- {{< iconify fa6-solid question >}} **Exercise**: Which formulas are
-valid 3-SAT instances?
-- {{< iconify fa6-solid ban >}} **Trick**: Not in 3-CNF means negative
-instance by definition
-
-:::
-
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
-
-**3-SAT is the "sweet spot"**: restricted enough to have clean structure,
-general enough to capture all of NP. This is why it's central to NP-completeness
-theory!
+- **Input**: CNF formula with $\leq$ 3 literals per clause
+- **Question**: Same as SAT, stricter format
+- **Example**: $(x \vee y \vee z) \wedge (\neg x \vee y)$
+- **Surprising**: No easier than general SAT!
 
 :::
 
 # Polyreductions between SAT variants
 
-## Reduction chain overview
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
-![](13-polyreductions_13.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Chain**: CircuitSAT $\leq_P$ SAT $\leq_P$ 3-SAT
-- **Conclusion**: All three are polyequivalent
-- **Implication**: Equally hard in terms of complexity
+- {{< iconify fa6-solid arrow-right >}} **Reduction chain**: CircuitSAT
+$\leq_P$ SAT $\leq_P$ 3-SAT
+- {{< iconify fa6-solid equals >}} **Polyequivalence**: All three equally hard
+- {{< iconify fa6-solid magic >}} **Key technique**: Transform structure while
+preserving satisfiability
+- {{< iconify fa6-solid puzzle-piece >}} **CircuitSAT to SAT**: Convert gates
+to clauses
+- {{< iconify fa6-solid scissors >}} **SAT to 3-SAT**: Split long clauses
+using dummy variables
 
 :::
 
-## CircuitSAT to SAT reduction
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+
+{{< iconify fa6-solid gears >}} **The reduction chain proves equivalence**:
+each transformation preserves satisfiability in polynomial time, showing all
+three problems have the same fundamental difficulty!
+
+:::
+
+## CircuitSAT to SAT: Main idea
 
 ![](13-polyreductions_14.png)
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Tseytin transformation**: Convert circuit to CNF formula
-- **Exercise**: Verify pos→pos, neg→neg, and polytime
-- **Key idea**: Each gate becomes a set of clauses
+- **Transform**: Each gate becomes clauses enforcing its logic
+- **AND gate**: $z = x \wedge y$ becomes clauses about $x, y, z$
+- **OR gate**: $z = x \vee y$ becomes different clauses
+- **Result**: Formula satisfiable iff circuit satisfiable
 
 :::
 
-# Splitting clauses: SAT to 3-SAT
-
-## The clause splitting technique
+## SAT to 3-SAT: Clause splitting
 
 ![](13-polyreductions_15.png)
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Problem**: Clause with more than 3 literals
-- **Solution**: Split into multiple 3-literal clauses
-- **Use**: Dummy variables to connect pieces
-- **Preserve**: Satisfiability of original formula
-
-:::
-
-## Clause splitting mechanics
-
-![](13-polyreductions_16.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **New variable**: Introduce dummy variable $z$
-- **Split clause**: Create two smaller clauses
-- **Repeat**: Until all clauses have $\leq$ 3 literals
-
-:::
-
-## Specific splitting example
-
-![](13-polyreductions_17.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Original**: $(x_1 \vee x_2 \vee x_3 \vee x_4)$
-- **After split**: $(x_1 \vee x_2 \vee z) \wedge (\neg z \vee x_3 \vee x_4)$
-- **Preserves satisfiability**: Check both directions
-
-:::
-
-## SAT to 3-SAT reduction
-
-![](13-polyreductions_18.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Algorithm**: Repeatedly split clauses until all have $\leq$ 3 literals
-- **Dummy variables**: Use different variable for each split
-- **Exercise**: Does this run in polynomial time?
-- **Answer**: Yes! Number of splits is linear in formula size
+- **Problem**: Clause $(x_1 \vee x_2 \vee x_3 \vee x_4)$ too long
+- **Solution**: Split using dummy variable $z$
+- **Result**: $(x_1 \vee x_2 \vee z) \wedge (\neg z \vee x_3 \vee x_4)$
+- **Preserves**: Original satisfiable iff split version satisfiable
 
 :::
 
 # Polyequivalence captures equal difficulty
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid equals >}} **Polyequivalence**: When problems $X$ and
+$Y$ reduce to each other
+- {{< iconify fa6-solid scale-balanced >}} **Equal difficulty**: $X \equiv_P
+Y$ means same computational hardness
+- {{< iconify fa6-solid link >}} **Transitivity**: Polyreductions compose to
+create equivalence classes
+- {{< iconify fa6-solid layer-group >}} **Complexity classes**: Groups of
+equally hard problems
+- {{< iconify fa6-solid forward >}} **NP-completeness preview**: Foundation
+for next chapter's theory
+
+:::
+
+::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+
+{{< iconify fa6-solid gears >}} **Polyequivalence partitions problems into
+difficulty classes**: if solving one problem in the class efficiently solves
+all problems in that class, then they form a natural unit of study. This
+creates the mathematical structure underlying NP-completeness!
+
+:::
 
 ## Definition of polyequivalence
 
