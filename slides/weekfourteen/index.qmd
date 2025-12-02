@@ -577,8 +577,8 @@ preserving satisfiability
 
 {{< iconify fa6-solid gears >}} **The reduction chain proves equivalence**: each
 transformation preserves satisfiability in polynomial time, showing all three
-problems have the same fundamental difficulty! Wow, this is an impressive
-result!
+problems have the same fundamental difficulty! **Wow, this is an impressive
+and powerful result**!
 
 :::
 
