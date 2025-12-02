@@ -626,10 +626,19 @@ and powerful result**!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Problem**: Clause $(x_1 \vee x_2 \vee x_3 \vee x_4)$ too long
+- **Problem**: Clause $(x_1 \vee x_2 \vee x_3 \vee x_4)$ too
+long
 - **Solution**: Split using dummy variable $z$
 - **Result**: $(x_1 \vee x_2 \vee z) \wedge (\neg z \vee x_3 \vee x_4)$
 - **Preserves**: Original satisfiable *iff* split version satisfiable
+
+:::
+
+::: {.fragment .boxed-content style="font-size: 0.8em;"}
+
+- **Key insights**:
+  - Even though 3-SAT seems more restricted, it's "just as hard" as SAT!
+  - Next, we define polyequivalence to formalize "equal difficulty"!
 
 :::
 
@@ -666,7 +675,7 @@ creates the mathematical structure for NP-completeness!
 ::: {.fragment style="font-size: 0.85em;"}
 
 - **Definition**: $F \equiv_P G$ if $F \leq_P G$ and $G \leq_P F$
-- **Meaning**: Problems are equally hard
+- **Meaning**: Problems are "equally hard"
 - **Examples**: UHC $\equiv_P$ DHC, CircuitSAT $\equiv_P$ SAT $\equiv_P$
 3-SAT
 - **Transitivity**: If $F \equiv_P G$ and $G \leq_P H$, then $F \equiv_P
