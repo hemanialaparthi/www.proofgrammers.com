@@ -692,7 +692,7 @@ hardness
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.775em;"}
+::: {.fragment .fade .boxed-content style="font-size: 0.725em;"}
 
 **NP-completeness is not the end of the story**: even if a problem is
 NP-complete, there are many techniques for dealing with it in practice.
@@ -703,7 +703,7 @@ tractable!
 
 ## Key insights for proofgrammers
 
-::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
+::: {.incremental style="margin-top: -0.25em; font-size: 0.8em;"}
 
 - {{< iconify fa6-solid check-circle >}} **P versus NP**: Most famous
 open problem in computer science
