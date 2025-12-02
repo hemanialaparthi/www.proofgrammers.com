@@ -2309,3 +2309,251 @@ learning objectives and standard NP complexity class presentations
 nondeterministic cloning)
 - NPoly ⊆ PolyCheck proof: 12-polycheck-and-npoly_8-13.png (nondeterministic
 choices to hint encoding)
+
+## Implement New Slides for Chapter Thirteen, "Polynomial-time Mapping Reductions: Proving X is as Easy as Y"
+
+- [X] You have access to the content of the book in the file:
+`What-Can-Be-Computed.pdf` and `What-Can-Be-Computed.md` that is in the root of
+this repository.
+- [X] You have access to the slides of the book in PPTX (which is hard for you
+to read) and a QMD file (which is easier for you to read) in the
+`theoreticalmachines/wcbc-slides/` directory.
+- [X] You have access to the images that were created from the slides for this
+chapter. These images may be especially important because of the fact that
+there are some diagrams that illustrate key concepts like "Formal definition of
+polyreduction" and "polyreduce Partition to Packing". The content in the
+quotation marks is the name of the slide that contains these images. You can
+include these images into the slides you make by finding them in the `img/`
+directory that is in the `theoreticalmachines/wcbc-slides/`. You have my
+permission to access this directory and to them copy images into the directory
+for the slides that you are creating to complete these tasks.
+- [X] You have access to the source code connected to this book in the
+directory `theoreticalmachines/wcbc-code/`. You may use this source code inside
+of a slide as long as you incorporate it into a `{pyodide}` fenced code block.
+- [X] I have created a template file for the slides in the
+`slides/weekfourteen/index.qmd`. You can add to this file! Please note that I
+have already created the correct title and added some learning objective slides
+that I want you to keep in this slide deck.
+- [X] I would like you to create a starting version of the slides for Chapter
+Eleven in the `slides/weekfourteen/index.qmd` file. The starting and ending
+content in this file is like a "bookend" for the content that you write. With
+that said, please note that this is only template content to show you the
+format. You need to actually create the content that goes on these slides.
+- [X] One challenge of this chapter is that it contains some source code
+examples that may not run correctly unless you include all needed source code
+from the book's archive. Do not include a source code example unless it is
+self-contained and it will run directly without an extra dependencies.
+- [X] There is source code available for you to include if you look in the
+directory that is called `theoreticalmachines/wcbc-code`. Please note that this
+is actually a symbolic link to another directory but you have my permission to
+access it and to copy files, like source code files, into the presentation's
+index.qmd file. You do not need to ask me for permission to do this task.
+- [X] Make sure to review all the prior slides that I have created in the
+`slides/` directory and the subdirectories for prior weeks in `weekone/` and
+`weektwo/` and `weekthree/` and `weekfour/` and `weeksix/` and `weekseven` and
+`weekeight/` to ensure that your slides are formatted and laid out just like
+the content that I have already created. There are also other directories that
+you can look at to see how I programmed these slides, like the most recent
+slide deck in the `weekthirteen/` directory. **Do not deviate from the format
+and style and voice that I have created for these slides!**
+- [X] Do not use slide layouts that you do not already see in these example
+slide decks. You must keep the same layout and flow that I have in these
+slides.
+- [X] Unless there is a clear motivation to do so, do you not use features of
+Quarto that you do not already see in these example slide decks.
+- [X] Do not make slides if they are not directly connected to the content in
+the book, the content in the slides (i.e., the PPTX or the extracted QMD file)
+or in the source code that connects to this chapter of the book.
+- [X] Create the same number of slides in this slide deck as you see in the
+example slide decks. Do not make these new slides any longer or shorter.
+- [X] Make sure to create "signposting" slides at the level of `#` that
+overview the next key idea that is going to be explained in the next section of
+slides.
+- [X] Make sure that you connect the slides to the theme of being a
+"proofgrammer" as explained in the course syllabus that is available in
+`syllabus/index.qmd`.
+- [X] Make sure that the slides that you create are short, succinct, and clear.
+I will be revising this content, essentially using it as a starting point.
+- [X] Please follow all the rules and regulations for creating this content and
+make sure that you notify me when you have completed this task.
+- [X] Render slides and verify layout meets presentation standards. An easy way
+for you to make sure the slides fit the required format is to use short titles
+and to follow the font sizes and layouts I have already used.
+- [X] Document support and evidence in COMPLETED.md
+- [X] Place all the completed tasks at the bottom of the COMPLETED.md file,
+exactly as they are written in this plan, making sure that I have a historical
+record of the way in which I have asked for this content. Critically, I need to
+see exactly these tasks inside of the COMPLETED.md file so that I can see what
+was the prompt that I provided to the agent.
+- [X] Do not delete the PLAN.md file. Rather, you can remove any items from the
+file that were satisfactorily completed.
+
+### Support for Content: Week Fourteen Slides (Chapter 13)
+
+**Polyreduction Theoretical Foundation**:
+
+- **Polynomial-time Mapping Reduction Definition**: For decision problems X
+and Y, we write X ≤ₚ Y if there exists polynomial-time computable function f
+such that for all inputs x: x∈X ↔ f(x)∈Y - WCBC Chapter 13 Figure
+13-polyreductions_0.png
+- **Three Required Conditions**: (1) f computable in polynomial time, (2) for
+all x∈X, f(x)∈Y (preserves membership), (3) for all x∉X, f(x)∉Y (preserves
+non-membership) - ensures reduction correctness
+- **Asymmetric Interpretation**: X ≤ₚ Y means "X is no harder than Y" or "X
+reduces to Y" - if Y solvable in polynomial time, then X also solvable in
+polynomial time by composing f with Y's solver
+- **Comparison to Turing Reductions**: Polyreductions more restrictive than
+general Turing reductions (Chapter 7) - single polynomial-time transformation
+rather than arbitrary polynomial-time oracle calls - Figure
+13-polyreductions_1.png
+
+**Graph Problem Polyreduction Examples**:
+
+- **UHC ≤ₚ DHC (Undirected to Directed Hamilton Cycle)**: Transform
+undirected graph G to directed graph G' by replacing each undirected edge
+{u,v} with directed edges (u,v) and (v,u) - polynomial-time transformation
+preserves Hamilton cycles - WCBC Figure 13-polyreductions_2.png
+- **DHC ≤ₚ UHC (Directed to Undirected)**: More complex gadget construction
+replacing each directed edge with 3-vertex path and vertex with 6-vertex
+structure - preserves directed Hamilton cycle property while converting to
+undirected graph - Figures 13-polyreductions_3-4.png
+- **UHC ≡ₚ DHC Polyequivalence**: Since UHC ≤ₚ DHC and DHC ≤ₚ UHC, the
+problems are polyequivalent (equally hard) - solving either in polynomial time
+implies solving both in polynomial time
+- **Practical Implication**: Graph polyreductions demonstrate that similar
+problems often have same asymptotic difficulty despite different formulations
+
+**Satisfiability Problem Polyreduction Chain**:
+
+- **CircuitSAT Definition**: Given Boolean circuit C with n input variables,
+does there exist assignment making output 1 (true)? Foundation of
+NP-completeness theory - Figure 13-polyreductions_5.png
+- **SAT Definition**: Given Boolean formula F in CNF (conjunctive normal
+form), does there exist satisfying assignment? Restriction of CircuitSAT to
+formulas rather than arbitrary circuits - Figure 13-polyreductions_6.png
+- **3-SAT Definition**: SAT restricted to CNF formulas where each clause has
+exactly 3 literals - further restriction but surprisingly still equally hard -
+Figure 13-polyreductions_7.png
+- **Polyreduction Chain**: CircuitSAT ≤ₚ SAT ≤ₚ 3-SAT proven through
+polynomial-time transformations, establishing all three problems
+polyequivalent - foundation for proving NP-completeness of hundreds of
+problems
+
+**SAT to 3-SAT Polyreduction Construction**:
+
+- **Clause Splitting for k=2 Literals**: Clause (a ∨ b) becomes (a ∨ b ∨ z) ∧
+(a ∨ b ∨ ¬z) where z is fresh variable - equivalent formulas with 3 literals
+per clause - Figure 13-polyreductions_8.png
+- **Clause Expansion for k≥4 Literals**: Clause (l₁ ∨ l₂ ∨ ... ∨ lₖ) becomes
+(l₁ ∨ l₂ ∨ z₁) ∧ (¬z₁ ∨ l₃ ∨ z₂) ∧ ... ∧ (¬zₖ₋₃ ∨ lₖ₋₁ ∨ lₖ) using k-3 fresh
+variables - Figures 13-polyreductions_9-10.png
+- **Satisfiability Preservation**: Original clause satisfiable ↔ transformed
+clauses satisfiable, proven by constructing explicit variable assignments in
+both directions - Figure 13-polyreductions_11.png
+- **Polynomial-time Transformation**: Each k-literal clause becomes O(k)
+3-literal clauses, total transformation runs in O(n) time where n is formula
+size
+
+**CircuitSAT to SAT Polyreduction**:
+
+- **Gate Variable Introduction**: For each gate g in circuit, introduce
+Boolean variable xₘ representing gate's output - circuit with m gates becomes
+formula with m variables
+- **Gate Constraint Encoding**: AND gate z = x ∧ y becomes clauses (¬x ∨ ¬y ∨
+z) ∧ (x ∨ ¬z) ∧ (y ∨ ¬z), OR gate z = x ∨ y becomes (x ∨ y ∨ ¬z) ∧ (¬x ∨ z)
+∧ (¬y ∨ z), NOT gate z = ¬x becomes (x ∨ z) ∧ (¬x ∨ ¬z) - Figures
+13-polyreductions_12-14.png
+- **Output Constraint**: Add unit clause (xₘ) requiring final output gate to
+be true - ensures satisfying assignment makes circuit output 1
+- **Polynomial-time Construction**: Each gate produces O(1) clauses, total
+formula has O(m) clauses constructible in O(m) time for m-gate circuit -
+Figure 13-polyreductions_15.png
+
+**Polyequivalence and Transitivity**:
+
+- **Polyequivalence Definition**: Problems X and Y are polyequivalent (X ≡ₚ
+Y) if X ≤ₚ Y and Y ≤ₚ X - means problems have same polynomial-time complexity
+- **Transitivity of ≤ₚ**: If X ≤ₚ Y and Y ≤ₚ Z then X ≤ₚ Z, proven by
+composing polynomial-time transformations f and g to get polynomial-time
+composition g∘f - WCBC Claim 13.1
+- **Implications for Hardness**: If X ≤ₚ Y and Y∈Poly then X∈Poly
+(contrapositive: if X∉Poly then Y∉Poly), providing method to prove problems
+hard by reduction from known hard problems
+- **Equivalence Classes**: Polyequivalence partitions problems into classes of
+equal difficulty - understanding one problem's complexity characterizes entire
+equivalence class
+
+**Educational Methodology and Proofgrammer Integration**:
+
+- **Theory-to-Code Translation**: Students implement polyreduction
+transformations as Python functions, making abstract reduction concepts
+concrete through executable code
+- **Interactive Transformations**: Graph and formula transformations
+visualized through images and potentially implemented in `pyodide` for
+hands-on experimentation
+- **Progressive Complexity**: Examples build from simple graph transformations
+through satisfiability problem chain to general polyreduction theory
+- **NP-Completeness Preparation**: Polyreduction techniques provide essential
+foundation for Cook-Levin theorem and NP-complete problem theory in subsequent
+chapters
+
+**Connection to Advanced Theoretical Concepts**:
+
+- **NP-Completeness Theory**: Polyreductions provide mechanism for proving
+problems NP-complete - if known NP-complete problem X reduces to Y, then Y is
+also NP-complete
+- **Computational Intractability**: Polyreduction chains identify large
+classes of equally hard problems - solving any one in polynomial time implies
+solving all in polynomial time
+- **Approximation Algorithms**: Understanding polyreduction structure helps
+identify which problems admit good approximations and which remain hard even
+to approximate
+- **Practical Problem Solving**: Recognizing problem as polyequivalent to
+known hard problem guides toward heuristics, approximations, or problem
+reformulation
+
+**Content Sources and Theoretical Support**:
+
+- **"What Can be Computed" Chapter 13**: Primary source for polyreduction
+definitions, graph problem reductions, satisfiability chain, and theoretical
+framework
+- **Author's Slides**: 20 images (13-polyreductions_0.png through _19.png)
+provide formal definitions, graph transformation diagrams, and satisfiability
+reduction visualizations
+- **WCBC Python Code**: Polyreduction implementations available in
+theoreticalmachines/wcbc-code/ directory (though most reductions are
+transformations rather than executable programs)
+- **Standard Complexity Literature**: Definitions align with Sipser, Garey &
+Johnson presentations of polynomial-time reductions and NP-completeness theory
+- **Cook-Levin Theorem Foundation**: CircuitSAT ≤ₚ SAT ≤ₚ 3-SAT chain
+provides essential building blocks for proving Cook-Levin theorem establishing
+SAT as NP-complete
+
+**Quality Assurance and Verification**:
+
+- **Successful Rendering**: Slides render correctly with `quarto render
+slides/weekfourteen/index.qmd` producing functional HTML presentation (562
+lines of content)
+- **Image Integration**: Successfully copied 20 images from
+theoreticalmachines/wcbc-slides/img/ to slides/weekfourteen/ directory for
+inline display of reduction diagrams
+- **Layout Standards**: Content structured with short titles, appropriate font
+sizes, fragment animations, and signposting slides following established
+presentation format
+- **80-Character Line Width**: All slide content maintains required line width
+for markdown formatting consistency throughout comprehensive slide deck
+- **Theoretical Accuracy**: Content precisely follows WCBC Chapter 13 learning
+objectives and standard polyreduction theory presentations
+
+**Images Used (20 total)**:
+
+- Polyreduction definition: 13-polyreductions_0.png
+- Turing reduction comparison: 13-polyreductions_1.png  
+- UHC to DHC reduction: 13-polyreductions_2.png
+- DHC to UHC gadgets: 13-polyreductions_3-4.png
+- CircuitSAT definition: 13-polyreductions_5.png
+- SAT definition: 13-polyreductions_6.png
+- 3-SAT definition: 13-polyreductions_7.png
+- SAT to 3-SAT clause splitting: 13-polyreductions_8-11.png
+- CircuitSAT to SAT encoding: 13-polyreductions_12-15.png
+- Additional reduction examples: 13-polyreductions_16-19.png
