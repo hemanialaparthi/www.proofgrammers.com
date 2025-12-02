@@ -242,7 +242,7 @@ speedup
 
 :::
 
-# We already know many polyequivalent problems!
+# We know many polyequivalent problems!
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
 
@@ -666,107 +666,6 @@ seems fundamentally easier than solving
 **P = NP would be revolutionary but is considered unlikely**: the
 asymmetry between solving and verification seems fundamental. Most
 cryptography depends on this asymmetry!
-
-:::
-
-# Proving CircuitSAT is NP-complete
-
-::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
-
-- {{< iconify fa6-solid trophy >}} **Next goal**: Prove CircuitSAT is
-NP-complete
-- {{< iconify fa6-solid lightbulb >}} **Strategy**: Show all NP problems
-reduce to it
-- {{< iconify fa6-solid microchip >}} **Key fact**: Polytime programs
-can be implemented by polysized circuits
-- {{< iconify fa6-solid link >}} **Connection**: Circuits naturally
-encode computation
-- {{< iconify fa6-solid microscope >}} **Foundation**: This proof
-underlies all of NP-completeness theory
-
-:::
-
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
-
-**CircuitSAT is the bridge**: it connects abstract computation to concrete
-circuits. This makes it the natural first NP-complete problem to prove!
-
-:::
-
-## Polytime programs as polysized circuits
-
-::: {.incremental style="margin-top: -0.25em; font-size: 0.8em;"}
-
-- {{< iconify fa6-solid microchip >}} **Key claim**: Programs run on
-computers, which are made of circuits
-- {{< iconify fa6-solid calculator >}} **Reasonable**: Circuits can
-implement computation
-- {{< iconify fa6-solid book >}} **Detailed proof**: See book for full
-argument
-- {{< iconify fa6-solid link >}} **Connection**: Polytime programs become
-polysized circuits
-
-:::
-
-## First circuit diagram
-
-![](14-np-completeness_23.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Circuit structure**: Shows how gates connect
-- **Polynomial size**: Circuit size bounded by polynomial in input
-- **Key insight**: Can encode computation as satisfiability
-
-:::
-
-## Second circuit diagram
-
-![](14-np-completeness_24.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Another view**: Different circuit configuration
-- **Same principle**: Polytime programs as polysized circuits
-- **Foundation**: For proving CircuitSAT is NP-complete
-
-:::
-
-## Third circuit diagram
-
-![](14-np-completeness_25.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Detailed structure**: Shows circuit components
-- **Boolean logic**: AND, OR, NOT gates
-- **Size bound**: Polynomial in input length
-
-:::
-
-## Fourth circuit diagram
-
-![](14-np-completeness_26.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Complete example**: Full circuit for specific computation
-- **Satisfiability**: Can this circuit output 1?
-- **NP-complete**: This question is as hard as any NP problem
-
-:::
-
-## Overview of circuit reduction
-
-![](14-np-completeness_27.png)
-
-::: {.fragment style="font-size: 0.85em;"}
-
-- **Reduction idea**: Convert NP problem to circuit satisfiability
-- **Polynomial transformation**: Circuit size polynomial in input
-- **Preserves**: Positive instances map to satisfiable circuits
-- **Cook-Levin**: This completes the proof that CircuitSAT is
-NP-complete
 
 :::
 
