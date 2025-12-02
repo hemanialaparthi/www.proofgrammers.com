@@ -383,8 +383,8 @@ problem works as starting point
 
 ::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
 
-**NP-completeness is transitive**: $A$ is NP-complete and $A \leq_P B$ and
-$B \in$ NP, then $B$ is NP-complete. We build a web of NP-complete
+**NP-completeness is transitive**: $A$ is NP-complete and $A \leq_P B$
+and $B \in$ NP, then $B$ is NP-complete. We now build a web of NP-complete
 problems!
 
 :::
@@ -662,7 +662,7 @@ source similar to your problem
 
 :::
 
-::: {.fragment .fade style="font-size: 0.8em;"}
+::: {.fragment .fade style="margin-top: -0.35em; font-size: 0.8em;"}
 
 **Template for NP-completeness proofs**: (1) construct polytime verifier, (2)
 describe polyreduction from known NP-complete problem, (3) verify all three
