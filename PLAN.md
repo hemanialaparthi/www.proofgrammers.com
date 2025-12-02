@@ -36,8 +36,8 @@ students who are learning about theoretical computer science for the first time.
 Here are some topics that you need to cover in an intuitive fashion:
     - P, NP, and Expo
     - P versus NP
-    - NP-Hard
     - NP-Complete
+    - NP-Hard
     - How to prove that a problem is NP-complete
     - Consequences of the possibility that P = NP
     - Expectation that NP is not equal to P
