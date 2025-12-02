@@ -67,16 +67,16 @@ we'll use these tools to identify the "hardest" problems in NP!
 
 :::
 
-# NP-completeness proves most hard problems are equally hard!
+# NP-completeness shows most hard problems are equally hard!
 
-::: {.fragment .boxed-content style="font-size: 0.875em;"}
+::: {.fragment .boxed-content style="font-size: 0.825em;"}
 
 {{< iconify fa6-solid trophy >}} **NP-completeness** helps with learning
-objectives **CS-204-1** and **CS-204-4**. We will define a profound class
-of problems that are **equally hard** and believed to be **intractable**. This
-chapter introduces the most famous open problem in computer science: **P
-versus NP**. **As proofgrammers, let's explore the hardest problems in NP and
-understand why they all have the same fundamental difficulty**! Let's dive in!
+objectives **CS-204-1** and **CS-204-4**. We will define a profound class of
+problems that are **equally hard** and believed to be **intractable**. This
+chapter introduces the most famous open problem in computer science: "**P versus
+NP**". **As proofgrammers, let's explore the hardest problems in NP and
+understand why they all have the same fundamental difficulty**!
 
 :::
 
