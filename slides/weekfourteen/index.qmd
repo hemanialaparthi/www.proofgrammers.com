@@ -79,7 +79,7 @@ formal relationships between computational problems**!
 
 :::
 
-## Important note about decision problems
+## Focus on decision problems
 
 ::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
 
@@ -179,7 +179,7 @@ instances? Or if it runs in exponential time?
 
 :::
 
-## Example: polyreduce PARTITION to PACKING
+## Polyreduce PARTITION to PACKING
 
 ![](13-polyreductions_3.png)
 
