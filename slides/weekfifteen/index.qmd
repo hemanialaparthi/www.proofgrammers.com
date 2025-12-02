@@ -346,9 +346,8 @@ proving other problems NP-complete
 ::: {.fragment .fade .boxed-content style="font-size: 0.65em;"}
 
 **Cook-Levin theorem "opened the floodgates"**: once we know one problem is
-NP-complete, we can prove others are NP-complete by reducing from it. This
-created a cascade of NP-completeness results! Creates a group of equally hard
-problems!
+NP-complete, we can prove others are NP-complete by reducing from it. Many
+results follow!
 
 :::
 
@@ -384,9 +383,9 @@ problem works as starting point
 
 ::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
 
-**NP-completeness is transitive**: if problem $A$ is NP-complete and $A
-\leq_P B$ and $B \in$ NP, then $B$ is NP-complete. This lets us build a web
-of NP-complete problems!
+**NP-completeness is transitive**: $A$ is NP-complete and $A \leq_P B$ and
+$B \in$ NP, then $B$ is NP-complete. We build a web of NP-complete
+problems!
 
 :::
 
