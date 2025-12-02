@@ -247,7 +247,7 @@ provides exponential speedup over deterministic search!
 
 :::
 
-# There are many polyequivalent problems!
+# So many polyequivalent problems!
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
 
@@ -264,7 +264,7 @@ problems at this same hardness level
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+::: {.fragment .fade .boxed-content style="font-size: 0.7em;"}
 
 **Polyequivalence creates hardness classes**: if you can solve one problem
 efficiently, you can solve them all efficiently. This creates the foundation
