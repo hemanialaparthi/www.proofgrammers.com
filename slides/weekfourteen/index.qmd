@@ -83,33 +83,34 @@ formal relationships between computational problems**!
 
 ::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
 
-- {{< iconify fa6-solid info-circle >}} **Focus shift**: Rest of course
-uses decision problems
-- {{< iconify fa6-solid exchange-alt >}} **Previous definitions**: PACKING,
-PARTITION were nondecision problems
-- {{< iconify fa6-solid check >}} **Now converted**: All problems become
+- {{< iconify fa6-solid circle-info >}} **Focus shift**: Rest of course uses
 decision problems
-- {{< iconify fa6-solid lightbulb >}} **Why?**: Building to
-NP-completeness (only defined for decision problems)
-- {{< iconify fa6-solid arrow-right >}} **Example**: PARTITION now asks
-"yes/no" instead of returning the partition
+- {{< iconify fa6-solid rocket >}} **Previous definitions**: PACKING, PARTITION
+were nondecision problems
+- {{< iconify fa6-solid circle-check >}} **Now converted**: All problems become
+decision problems, which can be done in a mechanical fashion, no generality
+loss from proof perspective
+- {{< iconify fa6-solid lightbulb >}} **Why?**: Building to NP-completeness,
+only defined for decision problems
+- {{< iconify fa6-solid arrow-right >}} **Example**: PARTITION returns `yes` or
+`no`, not the computed partition
 
 :::
 
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+::: {.fragment .fade .boxed-content style="font-size: 0.75em;"}
 
 **Decision problems simplify theoretical analysis**: by focusing on yes/no
 questions, we can more elegantly state and prove hardness results. This is a
-standard approach in complexity theory! The fundamental ideas remain the same!
+standard in complexity theory! The fundamental ideas remain the same!
 
 :::
 
-# Comparing reductions: Turing vs Poly
+# Two reductions
 
-::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
 
-- {{< iconify fa6-solid shuffle >}} **Two reduction types**: Turing reductions
-vs polynomial-time mapping reductions
+- {{< iconify fa6-solid shuffle >}} **Two reduction types**: Turing 
+versus polynomial-time mapping reductions
 - {{< iconify fa6-solid stopwatch >}} **Key difference**: Time constraints
 and number of oracle calls
 - {{< iconify fa6-solid microscope >}} **Turing reductions**: Prove
@@ -121,7 +122,7 @@ restrictions helps choose right tool
 
 :::
 
-::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
+::: {.fragment .boxed-content .fade style="margin-top: -0.25em; font-size: 0.7em;"}
 
 {{< iconify fa6-solid gears >}} **Polyreductions are more restrictive but more
 powerful for complexity**: by requiring polynomial-time transformations, they
