@@ -10,11 +10,13 @@ to read) and a QMD file (which is easier for you to read) in the
 `theoreticalmachines/wcbc-slides/` directory.
 - [ ] You have access to the images that were created from the slides for this
 chapter. These images may be especially important because of the fact that
-there are some diagrams that illustrate key concepts like "Diagrammatic view of
-verification". You can include these images into the slides you make by finding
-them in the `img/` directory that is in the `theoreticalmachines/wcbc-slides/`.
-You have my permission to access this directory and to them copy images into
-the directory for the slides that you are creating to complete these tasks.
+there are some diagrams that illustrate key concepts like "Formal definition of
+polyreduction" and "polyreduce Partition to Packing". The content in the
+quotation marks is the name of the slide that contains these images. You can
+include these images into the slides you make by finding them in the `img/`
+directory that is in the `theoreticalmachines/wcbc-slides/`. You have my
+permission to access this directory and to them copy images into the directory
+for the slides that you are creating to complete these tasks.
 - [ ] You have access to the source code connected to this book in the
 directory `theoreticalmachines/wcbc-code/`. You may use this source code inside
 of a slide as long as you incorporate it into a `{pyodide}` fenced code block.
@@ -23,7 +25,10 @@ of a slide as long as you incorporate it into a `{pyodide}` fenced code block.
 have already created the correct title and added some learning objective slides
 that I want you to keep in this slide deck.
 - [ ] I would like you to create a starting version of the slides for Chapter
-Eleven in the `slides/weekfourteen/index.qmd` file.
+Eleven in the `slides/weekfourteen/index.qmd` file. The starting and ending
+content in this file is like a "bookend" for the content that you write. With
+that said, please note that this is only template content to show you the
+format. You need to actually create the content that goes on these slides.
 - [ ] One challenge of this chapter is that it contains some source code
 examples that may not run correctly unless you include all needed source code
 from the book's archive. Do not include a source code example unless it is
