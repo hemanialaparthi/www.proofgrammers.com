@@ -73,8 +73,8 @@ relationships between computational problems! **Let's dive in**!
 {{< iconify fa6-solid link >}} **Polynomial-time mapping reductions** help
 with learning objectives **CS-204-1** and **CS-204-4**. We will define a
 powerful technique for **comparing problem difficulty**. This technique lets
-us prove that if we can solve problem $Y$ efficiently, then we can also solve
-problem $X$ efficiently. **As proofgrammers, let's explore how to establish
+us prove that if we can solve problem $G$ efficiently, then we can also solve
+problem $F$ efficiently. **As proofgrammers, let's explore how to establish
 formal relationships between computational problems**!
 
 :::
@@ -137,9 +137,9 @@ difficulty in complexity theory!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Turing reduction**: Solve problem $X$ by calling $Y$ as a subroutine
-- **No time limit**: Can use $Y$ multiple times, any running time
-- **Used for**: Proving compujability relationships
+- **Turing reduction**: Solve problem $F$ by calling $G$ as a subroutine
+- **No time limit**: Can use $G$ multiple times, any running time
+- **Used for**: Proving computability relationships
 
 :::
 
@@ -157,8 +157,8 @@ technique. Now, we define a new reduction to help with complexity!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Polyreduction**: Transform $X$ instance to $Y$ instance in polytime
-- **Call once**: Only one call to $Y$, then transform result back
+- **Polyreduction**: Transform $F$ instance to $G$ instance in polytime
+- **Call once**: Only one call to $G$, then transform result back
 - **Strict constraint**: Transformation must run in polynomial time
 - **Used for**: Proving efficiency relationships between problems
 
@@ -171,7 +171,7 @@ technique. Now, we define a new reduction to help with complexity!
 - {{< iconify fa6-solid stopwatch >}} **Time constraint**: Polyreductions
 require polynomial-time transformation
 - {{< iconify fa6-solid phone >}} **Number of calls**: Turing reductions
-can call $Y$ multiple times
+can call $G$ multiple times
 - {{< iconify fa6-solid map >}} **Mapping**: Polyreductions map instances
 directly, preserving structure
 - {{< iconify fa6-solid rocket >}} **Efficiency**: Polyreductions preserve
@@ -193,14 +193,14 @@ computability relationships! This makes them perfect for complexity theory!
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
-- {{< iconify fa6-solid book >}} **Formal notation**: $X \leq_P Y$ means "X
-polyreduces to Y"
+- {{< iconify fa6-solid book >}} **Formal notation**: $F \leq_P G$ means "F
+polyreduces to G"
 - {{< iconify fa6-solid list-check >}} **Three conditions**: Must verify all
 three for valid reduction
-- {{< iconify fa6-solid map >}} **Transformation function**: Convert X
-instances to Y instances
-- {{< iconify fa6-solid arrow-right >}} **Interpretation**: If Y is easy, then
-X is easy
+- {{< iconify fa6-solid map >}} **Transformation function**: Convert F
+instances to G instances
+- {{< iconify fa6-solid arrow-right >}} **Interpretation**: If G is easy, then
+F is easy
 - {{< iconify fa6-solid graduation-cap >}} **Proof structure**: Always verify
 pos→pos, neg→neg, polytime
 
@@ -209,7 +209,7 @@ pos→pos, neg→neg, polytime
 ::: {.fragment .fade style="margin-top: -0.25em; font-size: 0.75em;"}
 
 {{< iconify fa6-solid gears >}} **The three conditions work together**: they
-ensure that solving Y efficiently lets us solve X efficiently. Proofgrammers
+ensure that solving G efficiently lets us solve F efficiently. Proofgrammers
 must verify all three conditions in every polyreduction proof!
 
 :::
@@ -220,18 +220,10 @@ must verify all three conditions in every polyreduction proof!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Notation**: $X \leq_P Y$ means "$X$ polyreduces to $Y$"
+- **Notation**: $F \leq_P G$ means "$F$ polyreduces to $G$"
 - **Three conditions**: pos→pos, neg→neg, and polytime transformation
-- **Transformation**: Function $R$ converts $X$ instances to $Y$ instances
-- **Interpretation**: If we can solve $Y$, we can solve $X$ efficiently
-
-:::
-
-::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
-
-{{< iconify fa6-solid gears >}} Can you see why all three conditions are
-necessary? What happens if the transformation doesn't preserve positive
-instances? Or if it runs in exponential time?
+- **Transformation**: Function $R$ converts $F$ instances to $G$ instances
+- **Interpretation**: If we can solve $G$, we can solve $F$ efficiently
 
 :::
 
@@ -252,10 +244,10 @@ instances? Or if it runs in exponential time?
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
-- {{< iconify fa6-solid code-branch >}} **Turing reductions**: Multiple calls,
-adaptive, no time bound
+- {{< iconify fa6-solid code-branch >}} **Turing reductions**: Multiple calls
+to $G$, adaptive, no time bound
 - {{< iconify fa6-solid map-marked >}} **Polyreductions**: Single
-transformation, fixed, polynomial time
+transformation from $F$ to $G$, polynomial time
 - {{< iconify fa6-solid lightbulb >}} **Trade-off**: Flexibility vs stronger
 guarantees
 - {{< iconify fa6-solid trophy >}} **Power comparison**: Polyreductions reveal
@@ -279,7 +271,7 @@ we need for NP-completeness theory!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Multiple calls**: Can invoke subroutine many times
+- **Multiple calls**: Can invoke $G$ subroutine many times
 - **Adaptive**: Can make decisions based on previous calls
 - **No time bound**: Calls can take arbitrary time
 - **Weaker result**: Only proves computability relationship
@@ -292,8 +284,8 @@ we need for NP-completeness theory!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Single transformation**: Map once from $X$ to $Y$
-- **Fixed mapping**: Cannot adapt based on $Y$'s answer
+- **Single transformation**: Map once from $F$ to $G$
+- **Fixed mapping**: Cannot adapt based on $G$'s answer
 - **Time bounded**: Transformation must be polynomial
 - **Stronger result**: Proves efficiency relationship
 
@@ -302,7 +294,7 @@ we need for NP-completeness theory!
 ::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
 
 **Polyreductions are stricter but reveal more**: the constraints mean that
-$X \leq_P Y$ tells us that $X$ is "no harder" than $Y$ in terms of
+$F \leq_P G$ tells us that $F$ is "no harder" than $G$ in terms of
 computational complexity! This is exactly what we need for NP-completeness!
 
 :::
@@ -337,9 +329,9 @@ make this second nature!
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
 - {{< iconify fa6-solid arrow-right >}} **Condition 1 (pos→pos)**: Every
-positive instance of $X$ maps to a positive instance of $Y$
+positive instance of $F$ maps to a positive instance of $G$
 - {{< iconify fa6-solid arrow-left >}} **Condition 2 (neg→neg)**: Every
-negative instance of $X$ maps to a negative instance of $Y$
+negative instance of $F$ maps to a negative instance of $G$
 - {{< iconify fa6-solid stopwatch >}} **Condition 3 (polytime)**: The
 transformation $R$ runs in polynomial time
 - {{< iconify fa6-solid lightbulb >}} **Key insight**: Conditions 1 and 2
@@ -555,10 +547,10 @@ three problems have the same fundamental difficulty!
 
 ::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
 
-- {{< iconify fa6-solid equals >}} **Polyequivalence**: When problems $X$ and
-$Y$ reduce to each other
-- {{< iconify fa6-solid scale-balanced >}} **Equal difficulty**: $X \equiv_P
-Y$ means same computational hardness
+- {{< iconify fa6-solid equals >}} **Polyequivalence**: When problems $F$ and
+$G$ reduce to each other
+- {{< iconify fa6-solid scale-balanced >}} **Equal difficulty**: $F \equiv_P
+G$ means same computational hardness
 - {{< iconify fa6-solid link >}} **Transitivity**: Polyreductions compose to
 create equivalence classes
 - {{< iconify fa6-solid layer-group >}} **Complexity classes**: Groups of
@@ -583,12 +575,12 @@ creates the mathematical structure underlying NP-completeness!
 
 ::: {.fragment style="font-size: 0.85em;"}
 
-- **Definition**: $X \equiv_P Y$ if $X \leq_P Y$ and $Y \leq_P X$
+- **Definition**: $F \equiv_P G$ if $F \leq_P G$ and $G \leq_P F$
 - **Meaning**: Problems are equally hard
 - **Examples**: UHC $\equiv_P$ DHC, CircuitSAT $\equiv_P$ SAT $\equiv_P$
 3-SAT
-- **Transitivity**: If $X \equiv_P Y$ and $Y \equiv_P Z$, then $X \equiv_P
-Z$
+- **Transitivity**: If $F \equiv_P G$ and $G \leq_P H$, then $F \equiv_P
+H$
 
 :::
 
@@ -610,8 +602,8 @@ problem difficulty via transformations
 neg→neg, and polytime
 - {{< iconify fa6-solid check-circle >}} **SAT problems**: CircuitSAT,
 SAT, and 3-SAT are fundamental
-- {{< iconify fa6-solid check-circle >}} **Polyequivalence**: $X \equiv_P
-Y$ means equal difficulty
+- {{< iconify fa6-solid check-circle >}} **Polyequivalence**: $F \equiv_P
+G$ means equal difficulty
 - {{< iconify fa6-solid check-circle >}} **Proof technique**: Describe
 transformation, verify conditions
 - {{< iconify fa6-solid check-circle >}} **Next chapter**: NP-completeness
