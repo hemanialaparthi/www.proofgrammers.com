@@ -40,7 +40,7 @@ of both correct and efficient real-world Python programs.
 
 :::
 
-## Key insights for proofgrammers
+## Review from last week
 
 ::: {.incremental style="margin-top: -0.25em; font-size: 0.85em;"}
 
@@ -54,7 +54,7 @@ SAT, and 3-SAT are fundamental
 G$ means equal difficulty
 - {{< iconify fa6-solid check-circle >}} **Proof technique**: Describe
 transformation, verify conditions
-- {{< iconify fa6-solid check-circle >}} **Next chapter**: NP-completeness
+- {{< iconify fa6-solid check-circle >}} **This chapter**: NP-completeness
 builds on these ideas!
 
 :::
@@ -62,7 +62,835 @@ builds on these ideas!
 ::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
 
 **Polyreductions are the foundation of complexity theory**: they let us prove
-that problems are equally hard and establish a hierarchy of difficulty. Next,
+that problems are equally hard and establish a hierarchy of difficulty. Now,
 we'll use these tools to identify the "hardest" problems in NP!
+
+:::
+
+# NP-completeness proves most hard problems are equally hard!
+
+::: {.fragment .boxed-content style="font-size: 0.875em;"}
+
+{{< iconify fa6-solid trophy >}} **NP-completeness** helps with learning
+objectives **CS-204-1** and **CS-204-4**. We will define a profound class
+of problems that are **equally hard** and believed to be **intractable**. This
+chapter introduces the most famous open problem in computer science: **P
+versus NP**. **As proofgrammers, let's explore the hardest problems in NP and
+understand why they all have the same fundamental difficulty**! Let's dive in!
+
+:::
+
+## Recall definitions of P, NP, and Expo
+
+![](14-np-completeness_0.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **P**: Decision problems solvable in polynomial time
+- **NP**: Decision problems with polytime verification (= NPoly)
+- **Expo**: Decision problems solvable in exponential time
+- **Remember**: We restrict to decision problems in this chapter
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Key relationships**: We know P $\subseteq$ NP $\subseteq$ Expo, but are
+these proper subsets? This is the most famous open question in computer
+science!
+
+:::
+
+# P versus NP: the most famous open problem
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid question >}} **The question**: Does P = NP?
+- {{< iconify fa6-solid trophy >}} **Million dollar prize**: Clay
+Mathematics Institute offers $1M
+- {{< iconify fa6-solid microscope >}} **What it means**: Can every
+problem with polytime verification be solved in polytime?
+- {{< iconify fa6-solid lightbulb >}} **Current belief**: P $\neq$ NP
+(verification is easier than solving)
+- {{< iconify fa6-solid rocket >}} **No proof yet**: Despite decades of
+effort by brilliant researchers
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.75em;"}
+
+**P versus NP shapes modern cryptography**: if P = NP, most encryption
+schemes would be broken! Security depends on problems being hard to solve but
+easy to verify.
+
+:::
+
+## Is there anything in NP but not in P?
+
+![](14-np-completeness_1.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Green region**: This is where NP-complete problems live (if P $\neq$
+NP)
+- **Question**: Are there any computational problems in this region?
+- **Belief**: Yes, thousands of problems are in NP but not in P
+
+:::
+
+## Understanding P versus NP visually
+
+![](14-np-completeness_2.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Left diagram**: If P = NP, the classes are identical
+- **Right diagram**: If P $\neq$ NP, there's a gap between them
+- **Question mark**: We don't know which diagram is correct!
+
+:::
+
+## Two scenarios for P versus NP
+
+![](14-np-completeness_3.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Scenario 1**: P = NP (unlikely but possible)
+- **Scenario 2**: P $\neq$ NP (widely believed)
+- **Importance**: This affects cryptography, optimization, and more
+- **Deep insight**: Verification might be fundamentally easier than solving
+
+:::
+
+# Determinism versus nondeterminism view
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.825em;"}
+
+- {{< iconify fa6-solid microchip >}} **In P**: Solvable with polytime,
+deterministic program
+- {{< iconify fa6-solid code-branch >}} **In NP**: Solvable with polytime,
+nondeterministic program
+- {{< iconify fa6-solid question >}} **P versus NP**: Does
+nondeterminism provide exponential speedup?
+- {{< iconify fa6-solid lightbulb >}} **Belief**: Nondeterminism is
+fundamentally more powerful
+- {{< iconify fa6-solid microscope >}} **Implication**: Parallel search
+beats sequential search
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Nondeterminism captures parallel search**: nondeterministic programs can
+explore all possibilities simultaneously. The question is whether this
+provides exponential speedup over deterministic search!
+
+:::
+
+## Computational interpretation with trees
+
+![](14-np-completeness_4.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Deterministic**: Must search tree sequentially
+- **Nondeterministic**: Can explore all branches simultaneously
+- **P = NP would mean**: Sequential search is as good as parallel search
+- **P $\neq$ NP would mean**: Parallel search provides exponential
+speedup
+
+:::
+
+## Computation tree visualization
+
+![](14-np-completeness_5.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Tree structure**: Each branch represents a possible solution path
+- **Nondeterministic advantage**: Explore all paths at once
+- **Deterministic limitation**: Must try paths one at a time
+- **Question**: Can deterministic programs simulate this efficiently?
+
+:::
+
+## Another visual perspective
+
+![](14-np-completeness_6.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Alternative view**: Shows the relationship between P and NP
+- **Key insight**: NP contains problems easily verified but hard to solve
+- **Proofgrammers**: Must understand both views to grasp P versus NP
+
+:::
+
+# We already know many polyequivalent problems!
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
+
+- {{< iconify fa6-solid link >}} **Polyequivalence**: Problems with
+bidirectional polyreductions
+- {{< iconify fa6-solid trophy >}} **Examples**: DHC, UHC, TSPD,
+CircuitSAT, SAT, 3-SAT
+- {{< iconify fa6-solid equals >}} **Meaning**: These problems are
+"equally hard"
+- {{< iconify fa6-solid microscope >}} **Ignoring**: Polynomial factors
+in running time
+- {{< iconify fa6-solid rocket >}} **Thousands more**: Many other
+problems at this same hardness level
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Polyequivalence creates hardness classes**: if you can solve one problem
+efficiently, you can solve them all efficiently. This creates the foundation
+for NP-completeness!
+
+:::
+
+## Many problems are polyequivalent
+
+![](14-np-completeness_7.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Claim**: These problems are all polyequivalent
+- **Can be proved**: But we didn't prove all reductions
+- **Equal difficulty**: If we ignore polynomial factors
+- **Thousands known**: Many other problems at this level
+- **Next**: Define this class as NP-complete
+
+:::
+
+# NP-complete problems are the "hardest" in NP
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid trophy >}} **Classical definition**: NP-complete
+means all NP problems polyreduce to it
+- {{< iconify fa6-solid lightbulb >}} **Key property**: Hardest problems
+in NP
+- {{< iconify fa6-solid circle-check >}} **Must be in NP**: The problem
+itself is in NP
+- {{< iconify fa6-solid link >}} **Universal target**: Every NP problem
+reduces to it
+- {{< iconify fa6-solid rocket >}} **Implication**: Solving one solves
+them all!
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.75em;"}
+
+**NP-complete captures maximum hardness in NP**: these are the problems that
+are at least as hard as every other problem in NP. If we could solve one
+NP-complete problem in polynomial time, we could solve all NP problems in
+polynomial time!
+
+:::
+
+## Classical definition of NP-complete
+
+![](14-np-completeness_8.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Two conditions**: Must be in NP and all NP problems reduce to it
+- **Example**: DHC is NP-complete (although we haven't proved it yet)
+- **Surprising fact**: All NP problems polyreduce to DHC!
+- **This is strange but true**: One problem captures all of NP
+
+:::
+
+# Cook-Levin theorem: SAT is NP-complete
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.825em;"}
+
+- {{< iconify fa6-solid trophy >}} **Historic result**: Proved in 1970s
+by Cook and Levin
+- {{< iconify fa6-solid link >}} **Main claim**: All NP problems
+polyreduce to SAT
+- {{< iconify fa6-solid lightbulb >}} **Implication**: SAT is
+NP-complete
+- {{< iconify fa6-solid rocket >}} **Game changer**: Led to easier
+definition of NP-completeness
+- {{< iconify fa6-solid microscope >}} **Foundation**: Starting point for
+proving other problems NP-complete
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Cook-Levin theorem opened the floodgates**: once we know one problem is
+NP-complete, we can prove others are NP-complete by reducing from it. This
+created a cascade of NP-completeness results!
+
+:::
+
+## Equivalent definition using SAT
+
+![](14-np-completeness_9.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Because of Cook-Levin**: We can use SAT as a starting point
+- **Easier definition**: Just reduce from SAT instead of all NP problems
+- **Exercise**: Why is this definition equivalent to the classical one?
+
+:::
+
+## Visualization of SAT-based definition
+
+![](14-np-completeness_10.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Arrow from SAT**: Shows polyreduction from SAT
+- **In NP**: Problem must also be in NP
+- **Simpler proof**: Only need to show one reduction, not infinitely many
+
+:::
+
+# Nothing special about SAT in the definition
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
+
+- {{< iconify fa6-solid link >}} **Generalization**: Can use any
+NP-complete problem
+- {{< iconify fa6-solid trophy >}} **Key insight**: Once one problem is
+NP-complete, use it as base
+- {{< iconify fa6-solid microscope >}} **Chain of reductions**: Build web
+of NP-complete problems
+- {{< iconify fa6-solid rocket >}} **Practical approach**: Reduce from
+problem most similar to yours
+- {{< iconify fa6-solid equals >}} **All equivalent**: Any NP-complete
+problem works as starting point
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**NP-completeness is transitive**: if problem $A$ is NP-complete and $A
+\leq_P B$ and $B \in$ NP, then $B$ is NP-complete. This lets us build a web
+of NP-complete problems!
+
+:::
+
+## General definition using any NP-complete problem
+
+![](14-np-completeness_11.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Replace SAT**: Use any known NP-complete problem $C$
+- **Exercise**: Why is this definition equivalent to earlier ones?
+- **Flexibility**: Choose reduction source that's most convenient
+
+:::
+
+## Diagram of general definition
+
+![](14-np-completeness_12.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Arrow from $C$**: Shows polyreduction from known NP-complete problem
+- **Must be in NP**: Two conditions to verify
+- **Building the web**: Each new proof extends the network
+
+:::
+
+## Another perspective on the definition
+
+![](14-np-completeness_13.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Multiple views**: Different ways to understand NP-completeness
+- **All equivalent**: Choose the view that makes most sense to you
+- **Proofgrammers**: Should understand all equivalent definitions
+
+:::
+
+# Polyequivalence definition of NP-complete
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.825em;"}
+
+- {{< iconify fa6-solid equals >}} **Definition**: NP-complete problem is
+polyequivalent to any NP-complete problem
+- {{< iconify fa6-solid link >}} **Polyequivalence**: Bidirectional
+reductions between problems
+- {{< iconify fa6-solid lightbulb >}} **Key insight**: All NP-complete
+problems are equally hard
+- {{< iconify fa6-solid microscope >}} **Implication**: Solving one
+solves them all
+- {{< iconify fa6-solid trophy >}} **Elegant**: Captures the essence of
+NP-completeness
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Polyequivalence shows they're all the same difficulty**: every
+NP-complete problem is polyequivalent to every other NP-complete problem.
+This is a beautiful mathematical structure!
+
+:::
+
+## Polyequivalence-based definition
+
+![](14-np-completeness_14.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Using $\equiv_P$**: NP-complete means polyequivalent to any
+NP-complete problem
+- **Exercise**: Why is this definition equivalent to earlier ones?
+- **Elegance**: Shows NP-complete problems form equivalence class
+
+:::
+
+## Diagram showing polyequivalence
+
+![](14-np-completeness_15.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Bidirectional arrows**: Show polyequivalence relationship
+- **Equivalence class**: All NP-complete problems in same class
+- **Beautiful structure**: Mathematics of equal difficulty
+
+:::
+
+# New ways to understand P versus NP
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid lightbulb >}} **P = NP**: Every NP-complete
+problem is in P
+- {{< iconify fa6-solid microscope >}} **P $\neq$ NP**: No NP-complete
+problem is in P
+- {{< iconify fa6-solid trophy >}} **Key insight**: Focus on one
+NP-complete problem
+- {{< iconify fa6-solid rocket >}} **Practical**: Solve SAT efficiently
+and you solve everything!
+- {{< iconify fa6-solid equals >}} **Equivalence**: All NP-complete
+problems rise or fall together
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**P versus NP becomes concrete**: instead of asking about all NP problems,
+just ask whether any single NP-complete problem is in P. They all have the
+same fate!
+
+:::
+
+## First reformulation of P versus NP
+
+![](14-np-completeness_16.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **P = NP**: Equivalent to saying every NP-complete problem is in P
+- **P $\neq$ NP**: Equivalent to saying no NP-complete problem is in P
+- **Simplified question**: Focus on NP-complete problems
+
+:::
+
+## Second reformulation of P versus NP
+
+![](14-np-completeness_17.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Alternative phrasing**: Uses specific NP-complete problem
+- **Same question**: Different way to express P versus NP
+- **All equivalent**: Various formulations, one open problem
+
+:::
+
+## Third reformulation with diagram
+
+![](14-np-completeness_18.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Visual representation**: Shows the question graphically
+- **Green region question**: Are there any computational problems here?
+- **Exercise**: Why are these definitions equivalent to earlier ones?
+
+:::
+
+## Summary diagram of reformulations
+
+![](14-np-completeness_19.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Multiple formulations**: All express the same question
+- **Choose your favorite**: Use whichever helps your understanding
+- **Deep mathematics**: Different views of same fundamental question
+
+:::
+
+# NP-hard means "as hard as NP-complete"
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.825em;"}
+
+- {{< iconify fa6-solid trophy >}} **NP-hard definition**: All NP
+problems polyreduce to it
+- {{< iconify fa6-solid question >}} **Key difference**: Might not be in
+NP itself
+- {{< iconify fa6-solid microscope >}} **Could be harder**: Outside NP
+entirely
+- {{< iconify fa6-solid equals >}} **For problems in NP**: NP-hard and
+NP-complete are equivalent
+- {{< iconify fa6-solid rocket >}} **Examples**: Nondecision variants of
+NP-complete problems
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**NP-hard is more general than NP-complete**: NP-complete problems must be
+in NP, but NP-hard problems might be even harder. Think of NP-hard as "at
+least as hard as NP-complete"!
+
+:::
+
+## Definition of NP-hard
+
+![](14-np-completeness_20.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Key property**: All NP problems polyreduce to it
+- **Not necessarily in NP**: Could be outside NP
+- **Relationship**: For problems in NP, NP-hard = NP-complete
+- **Examples**: Nondecision TSP, nondecision UHC, nondecision SAT
+
+:::
+
+# Summary of complexity classes
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid layer-group >}} **P**: Polynomial-time solvable
+- {{< iconify fa6-solid check >}} **NP**: Polynomial-time verifiable
+- {{< iconify fa6-solid trophy >}} **NP-complete**: Hardest problems in
+NP
+- {{< iconify fa6-solid rocket >}} **NP-hard**: At least as hard as
+NP-complete
+- {{< iconify fa6-solid explosion >}} **Expo**: Exponential-time solvable
+- {{< iconify fa6-solid question >}} **Open question**: Relationships
+between classes
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Understanding the hierarchy**: P $\subseteq$ NP $\subseteq$ Expo is
+known, but whether these are proper subsets is still open. NP-complete and
+NP-hard problems are believed to be intractable!
+
+:::
+
+## Summary diagram for decision problems only
+
+![](14-np-completeness_21.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Restriction**: This diagram applies to decision problems only
+- **Relationships**: Shows how classes relate to each other
+- **Question marks**: Indicate unresolved relationships
+- **NP-complete**: At the boundary between P and NP
+
+:::
+
+## Summary including nondecision problems
+
+![](14-np-completeness_22.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Broader view**: Includes optimization and search problems
+- **NP-hard region**: Contains problems outside NP
+- **Complete picture**: Shows full complexity landscape
+- **Proofgrammers**: Should understand both decision and nondecision
+views
+
+:::
+
+# What if P = NP?
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
+
+- {{< iconify fa6-solid explosion >}} **Revolutionary**: Would transform
+cryptography, optimization, AI
+- {{< iconify fa6-solid unlock >}} **Cryptography broken**: Most
+encryption relies on P $\neq$ NP
+- {{< iconify fa6-solid trophy >}} **Optimization solved**: Traveling
+salesman, scheduling, packing
+- {{< iconify fa6-solid microscope >}} **Scientific discovery**: Drug
+design, protein folding
+- {{< iconify fa6-solid question >}} **Unlikely**: Most researchers
+believe P $\neq$ NP
+- {{< iconify fa6-solid lightbulb >}} **Deep insight**: Verification
+seems fundamentally easier than solving
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.75em;"}
+
+**P = NP would be revolutionary but is considered unlikely**: the
+asymmetry between solving and verification seems fundamental. Most
+cryptography depends on this asymmetry!
+
+:::
+
+# Proving CircuitSAT is NP-complete
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.85em;"}
+
+- {{< iconify fa6-solid trophy >}} **Next goal**: Prove CircuitSAT is
+NP-complete
+- {{< iconify fa6-solid lightbulb >}} **Strategy**: Show all NP problems
+reduce to it
+- {{< iconify fa6-solid microchip >}} **Key fact**: Polytime programs
+can be implemented by polysized circuits
+- {{< iconify fa6-solid link >}} **Connection**: Circuits naturally
+encode computation
+- {{< iconify fa6-solid microscope >}} **Foundation**: This proof
+underlies all of NP-completeness theory
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**CircuitSAT is the bridge**: it connects abstract computation to concrete
+circuits. This makes it the natural first NP-complete problem to prove!
+
+:::
+
+## Polytime programs as polysized circuits
+
+::: {.incremental style="margin-top: -0.25em; font-size: 0.8em;"}
+
+- {{< iconify fa6-solid microchip >}} **Key claim**: Programs run on
+computers, which are made of circuits
+- {{< iconify fa6-solid calculator >}} **Reasonable**: Circuits can
+implement computation
+- {{< iconify fa6-solid book >}} **Detailed proof**: See book for full
+argument
+- {{< iconify fa6-solid link >}} **Connection**: Polytime programs become
+polysized circuits
+
+:::
+
+## First circuit diagram
+
+![](14-np-completeness_23.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Circuit structure**: Shows how gates connect
+- **Polynomial size**: Circuit size bounded by polynomial in input
+- **Key insight**: Can encode computation as satisfiability
+
+:::
+
+## Second circuit diagram
+
+![](14-np-completeness_24.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Another view**: Different circuit configuration
+- **Same principle**: Polytime programs as polysized circuits
+- **Foundation**: For proving CircuitSAT is NP-complete
+
+:::
+
+## Third circuit diagram
+
+![](14-np-completeness_25.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Detailed structure**: Shows circuit components
+- **Boolean logic**: AND, OR, NOT gates
+- **Size bound**: Polynomial in input length
+
+:::
+
+## Fourth circuit diagram
+
+![](14-np-completeness_26.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Complete example**: Full circuit for specific computation
+- **Satisfiability**: Can this circuit output 1?
+- **NP-complete**: This question is as hard as any NP problem
+
+:::
+
+## Overview of circuit reduction
+
+![](14-np-completeness_27.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Reduction idea**: Convert NP problem to circuit satisfiability
+- **Polynomial transformation**: Circuit size polynomial in input
+- **Preserves**: Positive instances map to satisfiable circuits
+- **Cook-Levin**: This completes the proof that CircuitSAT is
+NP-complete
+
+:::
+
+# NP-completeness is widespread!
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.8em;"}
+
+- {{< iconify fa6-solid globe >}} **Thousands known**: NP-complete
+problems from diverse areas
+- {{< iconify fa6-solid computer >}} **Computer science**: MaxClique,
+MaxCut, DeadlockAvoidance
+- {{< iconify fa6-solid calculator >}} **Applied math**:
+IntegerProgramming, TaskAssignment
+- {{< iconify fa6-solid microscope >}} **Pure math**:
+QuadraticDiophantineEquation
+- {{< iconify fa6-solid dna >}} **Biology**: MultipleSequenceAlignment
+- {{< iconify fa6-solid lightbulb >}} **Key insight**: Fundamental
+hardness appears everywhere
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**NP-completeness spans all of science and engineering**: from scheduling
+to circuit design to biology, the same fundamental hardness appears. This
+shows the universality of computational difficulty!
+
+:::
+
+## The web of NP-completeness
+
+![](14-np-completeness_28.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Arrows**: Represent polyreductions between problems
+- **Solid black**: Reductions we proved in this book
+- **Dotted**: Reductions from other sources
+- **Grey**: Follow from NP-completeness of CircuitSAT
+- **Interconnected**: All problems equally hard
+
+:::
+
+# Proof techniques for NP-completeness
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.825em;"}
+
+- {{< iconify fa6-solid clipboard-list >}} **Standard approach**: Two
+steps to prove NP-completeness
+- {{< iconify fa6-solid check >}} **Step 1**: Show problem is in NP
+(give polytime verifier)
+- {{< iconify fa6-solid link >}} **Step 2**: Reduce from known
+NP-complete problem
+- {{< iconify fa6-solid microscope >}} **Choose wisely**: Pick reduction
+source similar to your problem
+- {{< iconify fa6-solid pencil >}} **Verify**: Pos→pos, neg→neg, polytime
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**Template for NP-completeness proofs**: (1) construct polytime verifier,
+(2) describe polyreduction from known NP-complete problem, (3) verify all
+three reduction conditions. Follow this every time!
+
+:::
+
+## Two-step proof technique
+
+![](14-np-completeness_29.png)
+
+::: {.fragment style="font-size: 0.85em;"}
+
+- **Step 1**: Problem is in NP (usually straightforward)
+- **Step 2**: Known NP-complete problem polyreduces to it
+- **Example exercise**: Prove HalfUHC is NP-complete
+- **Practice**: Work through examples to master the technique
+
+:::
+
+# Good news and bad news about NP-completeness
+
+::: {.incremental style="margin-top: -0.5em; font-size: 0.75em;"}
+
+- {{< iconify fa6-solid circle-info >}} **Many NP-complete**: But some
+problems are intermediate
+    - Examples: Factor, DiscreteLog (in NP, not known to be in P or
+NP-complete)
+- {{< iconify fa6-solid check >}} **Some are actually in P**: Don't
+assume all hard-looking problems are NP-complete
+    - Examples: IsPrime, MinCut, ShortestPath, LinearProgramming
+- {{< iconify fa6-solid chart-line >}} **Approximation**: Some NP-hard
+problems can be approximated efficiently
+    - Examples: TSP, TaskAssignment have good approximation algorithms
+- {{< iconify fa6-solid rocket >}} **Real-world solvable**: Some NP-hard
+problems can be solved for real-world inputs
+    - Example: SAT solvers work well in practice despite worst-case
+hardness
+- {{< iconify fa6-solid clock >}} **Pseudo-polynomial**: Some NP-hard
+problems solvable in pseudo-polynomial time
+    - Examples: Packing, SubsetSum, Partition, TaskAssignment
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.775em;"}
+
+**NP-completeness is not the end of the story**: even if a problem is
+NP-complete, there are many techniques for dealing with it in practice.
+Approximation, heuristics, and special cases can make "intractable" problems
+tractable!
+
+:::
+
+## Key insights for proofgrammers
+
+::: {.incremental style="margin-top: -0.25em; font-size: 0.825em;"}
+
+- {{< iconify fa6-solid check-circle >}} **P versus NP**: Most famous
+open problem in computer science
+- {{< iconify fa6-solid check-circle >}} **NP-complete**: Hardest
+problems in NP, all equally hard
+- {{< iconify fa6-solid check-circle >}} **NP-hard**: At least as hard
+as NP-complete
+- {{< iconify fa6-solid check-circle >}} **Cook-Levin**: SAT is
+NP-complete, starting point for all others
+- {{< iconify fa6-solid check-circle >}} **Widespread**: Thousands of
+NP-complete problems across all fields
+- {{< iconify fa6-solid check-circle >}} **Proof technique**: Show in NP,
+then polyreduce from known NP-complete problem
+- {{< iconify fa6-solid check-circle >}} **Practical impact**: Guides
+algorithm design and cryptography
+
+:::
+
+::: {.fragment .fade .boxed-content style="font-size: 0.8em;"}
+
+**NP-completeness is the crown jewel of complexity theory**: it shows that
+thousands of diverse problems all have the same fundamental difficulty. As
+proofgrammers, understanding NP-completeness helps us recognize intractable
+problems and guides us toward practical solutions!
 
 :::
