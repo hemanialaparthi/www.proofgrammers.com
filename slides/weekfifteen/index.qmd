@@ -212,8 +212,8 @@ provides exponential speedup over deterministic search!
 - **Deterministic**: Must search tree sequentially
 - **Nondeterministic**: Can explore all branches simultaneously
 - **P = NP would mean**: Sequential search is as good as parallel search
-- **P $\neq$ NP would mean**: Parallel search provides exponential
-speedup
+- **P $\neq$ NP would mean**: Parallel search provides exponential speedup
+- **Let's revisit a computational tree to understand this further!**
 
 :::
 
@@ -236,7 +236,7 @@ speedup
 
 ::: {.fragment style="font-size: 0.7em;"}
 
-- If the answer was yes, then P = NP!
+- **If the answer was yes, then P = NP!**
 - **Looking ahead**:
   - Next, we'll define NP-completeness
   - Show how NP-complete problems are the "hardest" in NP
