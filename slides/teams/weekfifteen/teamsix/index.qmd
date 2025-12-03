@@ -49,4 +49,7 @@ and are more efficient than normal Turing machines, but their polynomial-time po
 There are some Turing Machines that are more efficient (better time complexity), but it does not mean that their power (computability) is better.
 This is what we referred to as "syntactical sugar".
 
+## Model Equivalence
+
+![Model Equivalence](model_equivalence.png)
 
