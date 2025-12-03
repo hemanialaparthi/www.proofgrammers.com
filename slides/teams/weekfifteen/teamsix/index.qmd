@@ -30,7 +30,7 @@ format:
 
 ![tractable and intractable](tractableandintractable.png){width=60%}
 
-## What are the different type of TMs we covered in 204
+## What are the different types of TMs we covered in 204?
 
 ![Turing Machines](TMs.png){width=60%}
 
