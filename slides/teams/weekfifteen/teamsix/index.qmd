@@ -18,7 +18,7 @@ format:
     footer: "Proofgrammers"
 ---
 
-## Intro 
+## Intro
 
 ::: {.fragment}
 - Can a problem be intractable on a **standard** Turing Machine but tractable when solved by a Python program?
@@ -26,6 +26,27 @@ format:
 - Can a problem be intractable on a **multiple read-write** Turing Machine but tractable when solved by a Python program?
 :::
 
-## Tractable and Intractable 
+## Tractable and Intractable
 
 ![tractable and intractable](tractableandintractable.png){width=60%}
+
+## What are the different type of TMs we covered in 204
+
+![Turing Machines](TMs.png){width=60%}
+
+## What is tractable in terms of all types of TMs?
+
+![Polynomial Time Complexity](Poly-Time_Expl.png)
+
+The formula means that if `c` is a natural number and the `input size n` of the Turing Machine has a `running time TM​(n)` that is in `O(n^c)`,
+then that Turing Machine has polynomial time complexity.
+
+## Polynomial Time Factors
+
+`For this reason we will introduce a “suped-up” version of a Turing machine, called a “multi-tape Turing 4 machine”; these machines are easier to program
+and are more efficient than normal Turing machines, but their polynomial-time power is just the same as normal Turing machines.`
+
+There are some Turing Machines that are more efficient (better time complexity), but it does not mean that their power (computability) is better.
+This is what we referred to as "syntactical sugar".
+
+
