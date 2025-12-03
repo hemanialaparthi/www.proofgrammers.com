@@ -1,0 +1,19 @@
+---
+title: ""
+description: ""
+date: "2025-12-04"
+date-format: long
+author: Hemani Alaparthi, Hannah Brown, Cullen Doyle, Benedek Kaibas
+execute:
+  echo: true
+format:
+  live-revealjs:
+    completion: true
+    theme: default
+    css: ../../../css/styles.css
+    history: false
+    scrollable: true
+    transition: slide
+    highlight-style: github
+    footer: "Proofgrammers"
+---
