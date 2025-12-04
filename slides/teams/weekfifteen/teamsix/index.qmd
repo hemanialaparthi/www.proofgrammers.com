@@ -1,5 +1,5 @@
 ---
-title: "Tractibility and Turing Machines"
+title: "Tractability and Turing Machines"
 description: "Explore the confusion associated with Tractibility and Turing Machines"
 date: "2025-12-04"
 date-format: long
