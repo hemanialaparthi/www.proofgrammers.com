@@ -18,7 +18,7 @@ format:
     footer: "Proofgrammers"
 ---
 
-## Intro
+## Intro Questions
 
 ::: {.fragment}
 - Can a problem be intractable on a **standard** Turing Machine but tractable when solved by a Python program?
