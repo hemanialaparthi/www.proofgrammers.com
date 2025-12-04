@@ -53,3 +53,37 @@ This is what we referred to as "syntactical sugar".
 
 ![Model Equivalence](model_equivalence.png)
 
+All variants of Turing Machines can simulate each other with only polynomial overhead.
+
+## Answering Our Questions
+
+::: {.incremental}
+1. **Can a problem be intractable on a standard TM but tractable in Python?**
+   - **No.** Python and standard TMs are polynomially equivalent.
+
+2. **Can a problem be intractable on a multi-tape TM but tractable in Python?**
+   - **No.** Multi-tape TMs and Python are polynomially equivalent.
+
+3. **Can a problem be intractable on a multi-read-write TM but tractable in Python?**
+   - **No.** All reasonable models are polynomially equivalent.
+:::
+
+## Conclusion
+
+::: {.incremental}
+- **Tractability is an intrinsic property** of problems, not dependent on the computational model
+- Different TM variants and programming languages may have different **practical efficiency**
+- But they all have the **same polynomial-time power**
+- A problem that's intractable on one reasonable model is intractable on all of them
+- This is why we study complexity using abstract models like Turing Machines - the results apply universally
+:::
+
+## Key Takeaway
+
+::: {.fragment style="text-align: center; font-size: 1.5em; margin-top: 2em;"}
+**Tractability is about the problem, not the machine.**
+:::
+
+::: {.fragment style="text-align: center; margin-top: 2em;"}
+Understanding this helps us focus on what really matters: the inherent difficulty of computational problems.
+:::
