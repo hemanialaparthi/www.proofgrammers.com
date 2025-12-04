@@ -29,20 +29,21 @@ format:
 ## Key Definitions
 
 ::: {.fragment}
-**Tractable**: A problem is tractable if it can be solved in polynomial time (`O(n^c)` for some constant c)
+**Tractable**: A problem is tractable if it can be solved in polynomial time (`O(n^c)`) for some constant c.
 :::
 
 ::: {.fragment}
-**Intractable**: A problem is intractable if it requires more than polynomial time to solve
+**Intractable**: A problem is intractable if it requires more than polynomial time to solve.
 :::
 
 ::: {.fragment}
-**Efficiently**: While tractability means polynomial time, efficiency is more nuanced - `O(n^100)` is technically tractable but extremely slow in practice
+**Efficiently**: While tractability means polynomial time, efficiency is more nuanced. `O(n^100)` is technically tractable, but extremely 
+slow in practice.
 :::
 
 ## Tractable and Intractable
 
-![tractable and intractable](tractableandintractable.png){width=60%}
+![tractable and intractable](tractableandintractable.png){height=50%}
 
 ## What are the different types of TMs we covered in 204?
 
